@@ -1,713 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JamshadBhatti Finance | 🌎 World Hub – Top Earning Platform</title>
-<meta name="description" content="JamshadBhatti Finance World Hub – #1 Earning Platform. Learn investments, forex, crypto, online income, and financial freedom strategies.">
-<meta name="keywords" content="JamshadBhatti Finance, World Hub, Top Earning Website, Online Income, Forex, Crypto, Investment, Financial Freedom">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --gold: #FFD700;
-    --gold2: #FFA500;
-    --dark: #060810;
-    --dark2: #0d1120;
-    --dark3: #131929;
-    --accent: #00e5ff;
-    --green: #00ff88;
-    --text: #e8e8f0;
-    --muted: #8890aa;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--dark);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    overflow-x: hidden;
-  }
-
-  /* ── STARS BG ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(1px 1px at 10% 20%, rgba(255,215,0,0.6) 0%, transparent 100%),
-      radial-gradient(1px 1px at 30% 60%, rgba(0,229,255,0.4) 0%, transparent 100%),
-      radial-gradient(1px 1px at 70% 15%, rgba(255,215,0,0.5) 0%, transparent 100%),
-      radial-gradient(1px 1px at 90% 80%, rgba(0,255,136,0.4) 0%, transparent 100%),
-      radial-gradient(1px 1px at 55% 40%, rgba(255,165,0,0.4) 0%, transparent 100%),
-      radial-gradient(2px 2px at 20% 90%, rgba(255,215,0,0.3) 0%, transparent 100%),
-      radial-gradient(2px 2px at 80% 50%, rgba(0,229,255,0.3) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* ── NAVBAR ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 48px;
-    background: rgba(6,8,16,0.85);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,215,0,0.15);
-  }
-
-  .nav-logo {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 1.1rem;
-    font-weight: 900;
-    background: linear-gradient(90deg, var(--gold), var(--gold2), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 1px;
-  }
-
-  .nav-links { display: flex; gap: 32px; list-style: none; }
-  .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: color 0.3s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-
-  .nav-cta {
-    background: linear-gradient(135deg, var(--gold), var(--gold2));
-    color: #060810 !important;
-    padding: 9px 22px;
-    border-radius: 6px;
-    font-weight: 700 !important;
-    font-size: 0.82rem !important;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 24px 80px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255,215,0,0.08);
-    border: 1px solid rgba(255,215,0,0.3);
-    color: var(--gold);
-    padding: 6px 18px;
-    border-radius: 100px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-    animation: pulse 3s ease infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255,215,0,0.2); }
-    50% { box-shadow: 0 0 20px 6px rgba(255,215,0,0.1); }
-  }
-
-  .hero h1 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(2.2rem, 6vw, 5.5rem);
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 12px;
-    background: linear-gradient(135deg, #fff 0%, var(--gold) 40%, var(--gold2) 70%, var(--accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 40px rgba(255,215,0,0.25));
-    animation: fadeUp 1s ease both;
-  }
-
-  .hero-sub {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(1rem, 2.5vw, 1.8rem);
-    color: var(--accent);
-    margin-bottom: 28px;
-    letter-spacing: 3px;
-    animation: fadeUp 1s 0.2s ease both;
-  }
-
-  .hero p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    color: var(--muted);
-    max-width: 600px;
-    line-height: 1.8;
-    margin-bottom: 48px;
-    animation: fadeUp 1s 0.4s ease both;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hero-btns {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-    animation: fadeUp 1s 0.6s ease both;
-  }
-
-  .btn-primary {
-    background: linear-gradient(135deg, var(--gold), var(--gold2));
-    color: #060810;
-    padding: 16px 40px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 1rem;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 8px 32px rgba(255,215,0,0.3);
-  }
-
-  .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 48px rgba(255,215,0,0.5);
-  }
-
-  .btn-outline {
-    border: 1.5px solid rgba(0,229,255,0.5);
-    color: var(--accent);
-    padding: 16px 40px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-
-  .btn-outline:hover {
-    background: rgba(0,229,255,0.08);
-    border-color: var(--accent);
-    transform: translateY(-3px);
-  }
-
-  /* ── TICKER ── */
-  .ticker-wrap {
-    background: rgba(255,215,0,0.06);
-    border-top: 1px solid rgba(255,215,0,0.12);
-    border-bottom: 1px solid rgba(255,215,0,0.12);
-    overflow: hidden;
-    padding: 12px 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  .ticker {
-    display: flex;
-    gap: 60px;
-    animation: ticker 25s linear infinite;
-    white-space: nowrap;
-  }
-
-  @keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  .ticker-item {
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-
-  .ticker-item .up { color: var(--green); }
-  .ticker-item .down { color: #ff4d6d; }
-  .ticker-item .label { color: var(--muted); margin-right: 6px; }
-
-  /* ── STATS ── */
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1px;
-    background: rgba(255,215,0,0.08);
-    border-top: 1px solid rgba(255,215,0,0.1);
-    border-bottom: 1px solid rgba(255,215,0,0.1);
-    position: relative;
-    z-index: 1;
-  }
-
-  .stat-item {
-    background: var(--dark2);
-    padding: 36px 24px;
-    text-align: center;
-  }
-
-  .stat-num {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 2.4rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--gold), var(--gold2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  .stat-label {
-    color: var(--muted);
-    font-size: 0.82rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  /* ── SECTIONS ── */
-  section { position: relative; z-index: 1; }
-
-  .section-header {
-    text-align: center;
-    padding: 80px 24px 48px;
-  }
-
-  .section-tag {
-    display: inline-block;
-    background: rgba(255,215,0,0.1);
-    border: 1px solid rgba(255,215,0,0.25);
-    color: var(--gold);
-    font-size: 0.72rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 100px;
-    margin-bottom: 16px;
-  }
-
-  .section-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 14px;
-  }
-
-  .section-header p {
-    color: var(--muted);
-    font-size: 1rem;
-    max-width: 540px;
-    margin: 0 auto;
-    line-height: 1.8;
-  }
-
-  /* ── SERVICES GRID ── */
-  .services {
-    padding: 0 48px 80px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-
-  .service-card {
-    background: var(--dark3);
-    border: 1px solid rgba(255,215,0,0.08);
-    border-radius: 16px;
-    padding: 36px 32px;
-    transition: all 0.3s;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .service-card:hover {
-    border-color: rgba(255,215,0,0.3);
-    transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(255,215,0,0.08);
-  }
-
-  .service-card:hover::before { opacity: 1; }
-
-  .service-icon {
-    font-size: 2.4rem;
-    margin-bottom: 18px;
-    display: block;
-  }
-
-  .service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 10px;
-  }
-
-  .service-card p {
-    color: var(--muted);
-    font-size: 0.9rem;
-    line-height: 1.7;
-  }
-
-  .service-earn {
-    display: inline-block;
-    margin-top: 16px;
-    background: rgba(0,255,136,0.1);
-    border: 1px solid rgba(0,255,136,0.2);
-    color: var(--green);
-    font-size: 0.78rem;
-    font-weight: 600;
-    padding: 4px 14px;
-    border-radius: 100px;
-    letter-spacing: 0.5px;
-  }
-
-  /* ── EARN METHODS ── */
-  .earn-section {
-    background: var(--dark2);
-    border-top: 1px solid rgba(255,215,0,0.08);
-    border-bottom: 1px solid rgba(255,215,0,0.08);
-    padding: 80px 48px;
-  }
-
-  .earn-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-  }
-
-  .earn-card {
-    text-align: center;
-    padding: 32px 20px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,215,0,0.08);
-    background: rgba(255,255,255,0.02);
-    transition: all 0.3s;
-  }
-
-  .earn-card:hover {
-    background: rgba(255,215,0,0.04);
-    border-color: rgba(255,215,0,0.2);
-    transform: translateY(-4px);
-  }
-
-  .earn-num {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 2rem;
-    color: var(--gold);
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .earn-card h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 8px;
-  }
-
-  .earn-card p {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
-  /* ── WORLD MAP SECTION ── */
-  .world-section {
-    padding: 80px 48px;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .globe-display {
-    font-size: 8rem;
-    display: block;
-    margin: 0 auto 32px;
-    animation: spin 20s linear infinite;
-    filter: drop-shadow(0 0 30px rgba(255,215,0,0.3));
-  }
-
-  @keyframes spin {
-    0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(360deg); }
-  }
-
-  .countries {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 32px;
-  }
-
-  .country-tag {
-    background: rgba(0,229,255,0.07);
-    border: 1px solid rgba(0,229,255,0.18);
-    color: var(--accent);
-    padding: 6px 16px;
-    border-radius: 100px;
-    font-size: 0.8rem;
-    font-weight: 500;
-  }
-
-  /* ── TESTIMONIALS ── */
-  .testimonials {
-    background: var(--dark3);
-    padding: 80px 48px;
-    border-top: 1px solid rgba(255,215,0,0.08);
-  }
-
-  .testimonials-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-
-  .testi-card {
-    background: var(--dark2);
-    border: 1px solid rgba(255,215,0,0.08);
-    border-radius: 16px;
-    padding: 32px;
-    position: relative;
-  }
-
-  .testi-quote {
-    font-size: 3rem;
-    color: var(--gold);
-    opacity: 0.3;
-    font-family: Georgia, serif;
-    line-height: 0;
-    margin-bottom: 18px;
-    display: block;
-  }
-
-  .testi-card p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: var(--text);
-    margin-bottom: 20px;
-    font-style: italic;
-  }
-
-  .testi-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .testi-avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--gold2));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    color: #060810;
-    font-size: 0.9rem;
-  }
-
-  .testi-name {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #fff;
-  }
-
-  .testi-loc {
-    font-size: 0.78rem;
-    color: var(--muted);
-  }
-
-  .stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 4px; }
-
-  /* ── CONTACT / JOIN ── */
-  .join-section {
-    padding: 100px 48px;
-    text-align: center;
-    background: var(--dark);
-    position: relative;
-  }
-
-  .join-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at center, rgba(255,215,0,0.04) 0%, transparent 70%);
-  }
-
-  .join-card {
-    max-width: 680px;
-    margin: 0 auto;
-    background: var(--dark3);
-    border: 1px solid rgba(255,215,0,0.15);
-    border-radius: 24px;
-    padding: 60px 48px;
-    position: relative;
-  }
-
-  .join-card h2 {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
-    background: linear-gradient(135deg, var(--gold), var(--gold2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 14px;
-  }
-
-  .join-card p {
-    color: var(--muted);
-    margin-bottom: 36px;
-    line-height: 1.7;
-  }
-
-  .join-input-group {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .join-input {
-    flex: 1;
-    min-width: 220px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,215,0,0.2);
-    border-radius: 8px;
-    padding: 14px 18px;
-    color: #fff;
-    font-size: 0.95rem;
-    font-family: 'DM Sans', sans-serif;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .join-input:focus { border-color: var(--gold); }
-  .join-input::placeholder { color: var(--muted); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--dark2);
-    border-top: 1px solid rgba(255,215,0,0.08);
-    padding: 48px 48px 28px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 36px;
-    margin-bottom: 40px;
-  }
-
-  .footer-brand p {
-    color: var(--muted);
-    font-size: 0.85rem;
-    max-width: 280px;
-    line-height: 1.7;
-    margin-top: 10px;
-  }
-
-  .footer-links h4 {
-    color: var(--gold);
-    font-size: 0.78rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-
-  .footer-links ul { list-style: none; }
-  .footer-links li { margin-bottom: 8px; }
-  .footer-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.875rem;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: var(--gold); }
-
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding-top: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .footer-bottom p {
-    color: var(--muted);
-    font-size: 0.8rem;
-  }
-
-  .social-links { display: flex; gap: 14px; }
-  .social-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.2s;
-  }
-  .social-links a:hover { color: var(--gold); }
-
-  /* ── SCROLL REVEAL ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 768px) {
-    nav { padding: 14px 20px; }
-    .nav-links { display: none; }
-    .services, .earn-section, .testimonials, .world-section { padding-left: 20px; padding-right: 20px; }
-    .join-card { padding: 36px 24px; }
-    footer { padding: 40px 20px 24px; }
-    .footer-top { flex-direction: column; }
-  }
-</style>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✅ GOOGLE SEARCH CONSOLE VERIFICATION -->
+  <meta name="google-site-verification" content="OYiuUROfQmr-lsxxsYGWPIEiwI7AQN0--UTH39TSP2Y" />
+
+  <!-- SEO TAGS -->
+  <title>JamshadBhatti Finance | 🌎 World Hub – #1 Top Earning Platform 2026</title>
+  <meta name="description" content="JamshadBhatti Finance World Hub – Pakistan's #1 Online Earning & Finance Platform. Learn Forex Trading, Crypto Investment, Freelancing, Stock Market & Passive Income. Join 500K+ members worldwide.">
+  <meta name="keywords" content="JamshadBhatti Finance, JamshadBhatti, World Hub, Top Earning Platform, Online Income Pakistan, Forex Trading Pakistan, Crypto Investment, Financial Freedom, Online Earning 2026, Passive Income">
+  <meta name="author" content="JamshadBhatti Finance">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://jamshadbhtti1.github.io/">
+
+  <!-- OPEN GRAPH (Facebook/WhatsApp) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jamshadbhtti1.github.io/">
+  <meta property="og:title" content="JamshadBhatti Finance | 🌎 World Hub – #1 Top Earning Platform">
+  <meta property="og:description" content="Pakistan's #1 Online Earning & Finance Hub. Master Forex, Crypto, Freelancing & Passive Income. Join 500K+ members in 180+ countries.">
+  <meta property="og:site_name" content="JamshadBhatti Finance">
+
+  <!-- SCHEMA MARKUP -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "JamshadBhatti Finance",
+    "alternateName": "JamshadBhatti Finance World Hub",
+    "url": "https://jamshadbhtti1.github.io/",
+    "description": "Pakistan's #1 Online Earning & Finance Platform. Learn Forex, Crypto, Freelancing and Passive Income strategies.",
+    "founder": {"@type": "Person", "name": "Jamshad Bhatti"},
+    "foundingDate": "2024",
+    "areaServed": "Worldwide"
+  }
+  </script>
+
+  <!-- SITEMAP -->
+  <link rel="sitemap" type="application/xml" href="https://jamshadbhtti1.github.io/sitemap.xml">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -715,10 +49,10 @@
 <nav>
   <div class="nav-logo">JamshadBhatti Finance</div>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#earn">Earn</a></li>
-    <li><a href="#world">World Hub</a></li>
-    <li><a href="#join" class="nav-cta">Join Now 🚀</a></li>
+    <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#services">Services</a></li>
+    <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#earn">Earn</a></li>
+    <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#world">World Hub</a></li>
+    <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#join" class="nav-cta">Join Now 🚀</a></li>
   </ul>
 </nav>
 
@@ -727,10 +61,10 @@
   <div class="hero-badge">🌍 #1 World Finance Hub &nbsp;|&nbsp; TOP EARNING PLATFORM</div>
   <h1>JamshadBhatti<br>Finance</h1>
   <div class="hero-sub">🌎 WORLD HUB</div>
-  <p>The world's most trusted online earning & finance platform. Master investments, forex, crypto, and multiple passive income streams — guided by experts.</p>
+  <p>The world's most trusted online earning &amp; finance platform. Master investments, forex, crypto, and multiple passive income streams — guided by experts.</p>
   <div class="hero-btns">
-    <a href="#join" class="btn-primary">🚀 Start Earning Today</a>
-    <a href="#services" class="btn-outline">Explore Hub →</a>
+    <a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#join" class="btn-primary">🚀 Start Earning Today</a>
+    <a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#services" class="btn-outline">Explore Hub →</a>
   </div>
 </section>
 
@@ -781,7 +115,7 @@
 <section id="services">
   <div class="section-header reveal">
     <span class="section-tag">Our Services</span>
-    <h2>Finance & Earning Solutions</h2>
+    <h2>Finance &amp; Earning Solutions</h2>
     <p>Everything you need to build wealth, earn online, and achieve financial freedom — all in one hub.</p>
   </div>
   <div class="services">
@@ -837,12 +171,12 @@
     <div class="earn-card reveal">
       <span class="earn-num">01</span>
       <h4>Referral Program</h4>
-      <p>Invite friends & earn commission on every member who joins through your link.</p>
+      <p>Invite friends &amp; earn commission on every member who joins through your link.</p>
     </div>
     <div class="earn-card reveal">
       <span class="earn-num">02</span>
       <h4>Trading Signals</h4>
-      <p>Get daily VIP forex & crypto signals with 85%+ accuracy from our expert traders.</p>
+      <p>Get daily VIP forex &amp; crypto signals with 85%+ accuracy from our expert traders.</p>
     </div>
     <div class="earn-card reveal">
       <span class="earn-num">03</span>
@@ -942,7 +276,7 @@
       <input type="email" class="join-input" placeholder="Email Address">
     </div>
     <br>
-    <button class="btn-primary" style="width:100%; margin-top:4px; font-size:1.05rem;" onclick="alert('Welcome to JamshadBhatti Finance World Hub! 🌎🚀')">
+    <button class="btn-primary" style="width:100%; margin-top:4px; font-size:1.05rem;">
       🚀 Join JamshadBhatti Finance Hub FREE
     </button>
     <p style="margin-top:16px; font-size:0.78rem; color:var(--muted);">✅ No credit card required &nbsp;|&nbsp; ✅ Instant access &nbsp;|&nbsp; ✅ 180+ countries</p>
@@ -959,78 +293,226 @@
     <div class="footer-links">
       <h4>Services</h4>
       <ul>
-        <li><a href="#">Forex Trading</a></li>
-        <li><a href="#">Crypto Investment</a></li>
-        <li><a href="#">Stock Market</a></li>
-        <li><a href="#">Freelancing</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">Forex Trading</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">Crypto Investment</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">Stock Market</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">Freelancing</a></li>
       </ul>
     </div>
     <div class="footer-links">
       <h4>Earning</h4>
       <ul>
-        <li><a href="#">Referral Program</a></li>
-        <li><a href="#">Trading Signals</a></li>
-        <li><a href="#">Affiliate Marketing</a></li>
-        <li><a href="#">Online Courses</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">Referral Program</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">Trading Signals</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">Affiliate Marketing</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">Online Courses</a></li>
       </ul>
     </div>
     <div class="footer-links">
       <h4>Connect</h4>
       <ul>
-        <li><a href="#">📘 Facebook</a></li>
-        <li><a href="#">📸 Instagram</a></li>
-        <li><a href="#">▶️ YouTube</a></li>
-        <li><a href="#">💬 WhatsApp Group</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">📘 Facebook</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">📸 Instagram</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">▶️ YouTube</a></li>
+        <li><a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">💬 WhatsApp Group</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 JamshadBhatti Finance 🌎 World Hub. All Rights Reserved.</p>
     <div class="social-links">
-      <a href="#">📘</a>
-      <a href="#">📸</a>
-      <a href="#">▶️</a>
-      <a href="#">✉️</a>
+      <a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">📘</a>
+      <a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">📸</a>
+      <a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">▶️</a>
+      <a href="https://jamshadbhtti1.github.io/?fbclid=Iwb21leARzDZFjbGNrBHMNVGV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHuTdBq2Oe7UArX3M_BTH7bm_BC5qg2Aco40iSLESp41f21KhfmUm3F-m0PgU_aem_YpbIsuy-JDcgBrxIIGZJyg#">✉️</a>
     </div>
   </div>
 </footer>
 
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
 
-  // Counter animation
-  function animateCounter(el, target, suffix = '') {
-    let current = 0;
-    const step = target / 60;
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      el.textContent = Math.floor(current).toLocaleString() + suffix;
-    }, 25);
-  }
 
-  // Smooth nav scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  });
-</script>
-</body>
-</html>
+
+</body></html>
+------MultipartBoundary--WIDljXCFWvw47VcuqWmTEwrcEuWIUYWRQPsBUsLI3y----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap
+
+@charset "utf-8";
+
+@font-face { font-family: "Cinzel Decorative"; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/cinzeldecorative/v19/daaHSScvJGqLYhG8nNt8KPPswUAPniZoadlKSTGplhXF7UU.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Cinzel Decorative"; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/cinzeldecorative/v19/daaHSScvJGqLYhG8nNt8KPPswUAPniZoadlESTGplhXF.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Cinzel Decorative"; font-style: normal; font-weight: 900; font-display: swap; src: url("https://fonts.gstatic.com/s/cinzeldecorative/v19/daaHSScvJGqLYhG8nNt8KPPswUAPniZQa9lKSTGplhXF7UU.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Cinzel Decorative"; font-style: normal; font-weight: 900; font-display: swap; src: url("https://fonts.gstatic.com/s/cinzeldecorative/v19/daaHSScvJGqLYhG8nNt8KPPswUAPniZQa9lESTGplhXF.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 300; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 300; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu6-K6z9mXgjU0.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "DM Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtXA-X-oE0qsEw.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt7A-X-oE0qsEw.woff2") format("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt_A-X-oE0qsEw.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Playfair Display"; font-style: italic; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-X-oE0o.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgEM86xRbPQ.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgEM86xRbPQ.woff2") format("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgEM86xRbPQ.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgEM86xRbPQ.woff2") format("woff2"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgEM86xRbPQ.woff2") format("woff2"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgEM86xRbPQ.woff2") format("woff2"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+@font-face { font-family: "Playfair Display"; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2") format("woff2"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+------MultipartBoundary--WIDljXCFWvw47VcuqWmTEwrcEuWIUYWRQPsBUsLI3y----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: 
+
+@charset "utf-8";
+
+:root { --gold: #FFD700; --gold2: #FFA500; --dark: #060810; --dark2: #0d1120; --dark3: #131929; --accent: #00e5ff; --green: #00ff88; --text: #e8e8f0; --muted: #8890aa; }
+
+* { margin: 0px; padding: 0px; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body { background: var(--dark); color: var(--text); font-family: "DM Sans", sans-serif; overflow-x: hidden; }
+
+body::before { content: ""; position: fixed; inset: 0px; background: radial-gradient(1px 1px at 10% 20%, rgba(255, 215, 0, 0.6) 0%, transparent 100%), radial-gradient(1px 1px at 30% 60%, rgba(0, 229, 255, 0.4) 0%, transparent 100%), radial-gradient(1px 1px at 70% 15%, rgba(255, 215, 0, 0.5) 0%, transparent 100%), radial-gradient(1px 1px at 90% 80%, rgba(0, 255, 136, 0.4) 0%, transparent 100%), radial-gradient(1px 1px at 55% 40%, rgba(255, 165, 0, 0.4) 0%, transparent 100%), radial-gradient(2px 2px at 20% 90%, rgba(255, 215, 0, 0.3) 0%, transparent 100%), radial-gradient(2px 2px at 80% 50%, rgba(0, 229, 255, 0.3) 0%, transparent 100%); pointer-events: none; z-index: 0; }
+
+nav { position: fixed; top: 0px; left: 0px; right: 0px; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; background: rgba(6, 8, 16, 0.85); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255, 215, 0, 0.15); }
+
+.nav-logo { font-family: "Cinzel Decorative", serif; font-size: 1.1rem; font-weight: 900; background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-color: ; background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 1px; }
+
+.nav-links { display: flex; gap: 32px; list-style: none; }
+
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.3s; }
+
+.nav-links a:hover { color: var(--gold); }
+
+.nav-cta { background: linear-gradient(135deg, var(--gold), var(--gold2)); padding: 9px 22px; border-radius: 6px; color: rgb(6, 8, 16) !important; font-weight: 700 !important; font-size: 0.82rem !important; }
+
+.hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; z-index: 1; }
+
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 215, 0, 0.08); border: 1px solid rgba(255, 215, 0, 0.3); color: var(--gold); padding: 6px 18px; border-radius: 100px; font-size: 0.78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 32px; animation: 3s ease 0s infinite normal none running pulse; }
+
+@keyframes pulse { 
+  0%, 100% { box-shadow: rgba(255, 215, 0, 0.2) 0px 0px 0px 0px; }
+  50% { box-shadow: rgba(255, 215, 0, 0.1) 0px 0px 20px 6px; }
+}
+
+.hero h1 { font-family: "Cinzel Decorative", serif; font-size: clamp(2.2rem, 6vw, 5.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 12px; background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-color: ; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(rgba(255, 215, 0, 0.25) 0px 0px 40px); animation: 1s ease 0s 1 normal both running fadeUp; }
+
+.hero-sub { font-family: "Cinzel Decorative", serif; font-size: clamp(1rem, 2.5vw, 1.8rem); color: var(--accent); margin-bottom: 28px; letter-spacing: 3px; animation: 1s ease 0.2s 1 normal both running fadeUp; }
+
+.hero p { font-size: clamp(1rem, 2vw, 1.2rem); color: var(--muted); max-width: 600px; line-height: 1.8; margin-bottom: 48px; animation: 1s ease 0.4s 1 normal both running fadeUp; }
+
+@keyframes fadeUp { 
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; animation: 1s ease 0.6s 1 normal both running fadeUp; }
+
+.btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold2)); color: rgb(6, 8, 16); padding: 16px 40px; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: rgba(255, 215, 0, 0.3) 0px 8px 32px; }
+
+.btn-primary:hover { transform: translateY(-3px); box-shadow: rgba(255, 215, 0, 0.5) 0px 16px 48px; }
+
+.btn-outline { border: 1.5px solid rgba(0, 229, 255, 0.5); color: var(--accent); padding: 16px 40px; border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none; background: transparent; cursor: pointer; transition: 0.2s; }
+
+.btn-outline:hover { background: rgba(0, 229, 255, 0.08); border-color: var(--accent); transform: translateY(-3px); }
+
+.ticker-wrap { background: rgba(255, 215, 0, 0.06); border-top: 1px solid rgba(255, 215, 0, 0.12); border-bottom: 1px solid rgba(255, 215, 0, 0.12); overflow: hidden; padding: 12px 0px; position: relative; z-index: 1; }
+
+.ticker { display: flex; gap: 60px; animation: 25s linear 0s infinite normal none running ticker; white-space: nowrap; }
+
+@keyframes ticker { 
+  0% { transform: translateX(0px); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.5px; }
+
+.ticker-item .up { color: var(--green); }
+
+.ticker-item .down { color: rgb(255, 77, 109); }
+
+.ticker-item .label { color: var(--muted); margin-right: 6px; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: rgba(255, 215, 0, 0.08); border-top: 1px solid rgba(255, 215, 0, 0.1); border-bottom: 1px solid rgba(255, 215, 0, 0.1); position: relative; z-index: 1; }
+
+.stat-item { background: var(--dark2); padding: 36px 24px; text-align: center; }
+
+.stat-num { font-family: "Cinzel Decorative", serif; font-size: 2.4rem; font-weight: 700; background-image: ; background-position-x: ; background-position-y: ; background-size: ; background-repeat: ; background-attachment: ; background-origin: ; background-color: ; background-clip: text; -webkit-text-fill-color: transparent; display: block; margin-bottom: 8px; }
+
+.stat-label { color: var(--muted); font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase; }
+
+section { position: relative; z-index: 1; }
+
+.section-header { text-align: center; padding: 80px 24px 48px; }
+
+.section-tag { display: inline-block; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.25); color: var(--gold); font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; padding: 5px 16px; border-radius: 100px; margin-bottom: 16px; }
+
+.section-header h2 { font-family: "Playfair Display", serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; color: rgb(255, 255, 255); margin-bottom: 14px; }
+
+.section-header p { color: var(--muted); font-size: 1rem; max-width: 540px; margin: 0px auto; line-height: 1.8; }
+
+.services { padding: 0px 48px 80px; max-width: 1200px; margin: 0px auto; }
+
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+
+.service-card { background: var(--dark3); border: 1px solid rgba(255, 215, 0, 0.08); border-radius: 16px; padding: 36px 32px; transition: 0.3s; cursor: pointer; position: relative; overflow: hidden; }
+
+.service-card::before { content: ""; position: absolute; top: 0px; left: 0px; right: 0px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.3s; }
+
+.service-card:hover { border-color: rgba(255, 215, 0, 0.3); transform: translateY(-6px); box-shadow: rgba(255, 215, 0, 0.08) 0px 20px 60px; }
+
+.service-card:hover::before { opacity: 1; }
+
+.service-icon { font-size: 2.4rem; margin-bottom: 18px; display: block; }
+
+.service-card h3 { font-family: "Playfair Display", serif; font-size: 1.2rem; font-weight: 700; color: rgb(255, 255, 255); margin-bottom: 10px; }
+
+.service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+.service-earn { display: inline-block; margin-top: 16px; background: rgba(0, 255, 136, 0.1); border: 1px solid rgba(0, 255, 136, 0.2); color: var(--green); font-size: 0.78rem; font-weight: 600; padding: 4px 14px; border-radius: 100px; letter-spacing: 0.5px; }
+
+.earn-section { background: var(--dark2); border-top: 1px solid rgba(255, 215, 0, 0.08); border-bottom: 1px solid rgba(255, 215, 0, 0.08); padding: 80px 48px; }
+
+.earn-grid { max-width: 1100px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+
+.earn-card { text-align: center; padding: 32px 20px; border-radius: 12px; border: 1px solid rgba(255, 215, 0, 0.08); background: rgba(255, 255, 255, 0.02); transition: 0.3s; }
+
+.earn-card:hover { background: rgba(255, 215, 0, 0.04); border-color: rgba(255, 215, 0, 0.2); transform: translateY(-4px); }
+
+.earn-num { font-family: "Cinzel Decorative", serif; font-size: 2rem; color: var(--gold); display: block; margin-bottom: 10px; }
+
+.earn-card h4 { font-size: 1rem; font-weight: 600; color: rgb(255, 255, 255); margin-bottom: 8px; }
+
+.earn-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+.world-section { padding: 80px 48px; text-align: center; max-width: 900px; margin: 0px auto; }
