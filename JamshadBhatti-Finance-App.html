@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#05050d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="description" content="JamshadBhatti Finance World Hub – #1 Earning Platform. Live Stocks, Forex, Crypto, Referral & Investment.">
+  <meta name="keywords" content="JamshadBhatti Finance, Earning App, Forex, Crypto, Stocks, Investment Pakistan">
+  <meta name="google-site-verification" content="OYiuUROfQmr-lsxxsYGWPIEiwI7AQN0--UTH39TSP2Y" />
+  <meta name="robots" content="index, follow">
+  <title>JamshadBhatti Finance | 🌍 World Hub — Live App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #FFD700; --gold2: #FFA500; --green: #00E676; --red: #FF1744;
+      --bg: #05050d; --bg2: #0d0d1a; --bg3: #141428; --border: #1e1e3a;
+      --text: #e8e8ff; --muted: #6060a0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    body { background: var(--bg); color: var(--text); font-family: 'Exo 2', sans-serif; min-height: 100vh; overflow-x: hidden; }
+    body::before {
+      content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(ellipse at 20% 20%, #FFD70008 0%, transparent 50%),
+                  radial-gradient(ellipse at 80% 80%, #00E67608 0%, transparent 50%);
+      z-index: 0; pointer-events: none;
+    }
+
+    /* HEADER */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(5,5,13,0.97); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 900; color: var(--gold); }
+    .logo span { color: var(--green); }
+    .live-badge {
+      display: flex; align-items: center; gap: 5px;
+      background: #00E67622; border: 1px solid var(--green);
+      border-radius: 20px; padding: 3px 10px; font-size: 9px; color: var(--green);
+      font-family: 'Orbitron', sans-serif; letter-spacing: 1px;
+    }
+    .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    /* TICKER */
+    .ticker { background: var(--bg2); border-bottom: 1px solid var(--border); overflow: hidden; padding: 7px 0; position: relative; z-index: 1; }
+    .ticker-inner { display: flex; gap: 28px; animation: tick 40s linear infinite; white-space: nowrap; }
+    .ticker-item { font-size: 10px; font-family: 'Orbitron', sans-serif; }
+    .up { color: var(--green); } .dn { color: var(--red); }
+    @keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    .main { position: relative; z-index: 1; padding-bottom: 80px; }
+
+    /* HERO */
+    .hero { padding: 16px 16px 8px; text-align: center; }
+    .hero-badge {
+      display: inline-block; background: linear-gradient(135deg,#FFD70022,#FFA50022);
+      border: 1px solid var(--gold); border-radius: 20px; padding: 3px 14px;
+      font-size: 9px; color: var(--gold); letter-spacing: 2px; font-family: 'Orbitron', sans-serif; margin-bottom: 8px;
+    }
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif; font-size: 20px; font-weight: 900;
+      background: linear-gradient(135deg, var(--gold), var(--gold2), var(--green));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1.3; margin-bottom: 4px;
+    }
+    .hero p { font-size: 11px; color: var(--muted); }
+
+    /* STATS */
+    .stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; padding: 10px 16px; }
+    .stat-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 6px; text-align: center; }
+    .stat-card .num { font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700; color: var(--gold); }
+    .stat-card .lbl { font-size: 8px; color: var(--muted); margin-top: 2px; }
+
+    /* SECTION */
+    .section { padding: 0 16px 14px; }
+    .section-title {
+      font-family: 'Orbitron', sans-serif; font-size: 10px; color: var(--muted);
+      letter-spacing: 2px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+    }
+    .section-title::after { content:''; flex:1; height:1px; background:var(--border); }
+
+    /* BALANCE */
+    .balance-card {
+      background: linear-gradient(135deg,#0d1a0d,#0d0d1a);
+      border: 1px solid #00E67633; border-radius: 14px; padding: 16px; margin-bottom: 10px;
+    }
+    .balance-label { font-size: 10px; color: var(--muted); letter-spacing: 1px; margin-bottom: 3px; }
+    .balance-amount { font-family: 'Orbitron', sans-serif; font-size: 26px; font-weight: 900; color: var(--green); }
+    .balance-sub { font-size: 10px; color: var(--muted); margin-top: 3px; }
+    .balance-actions { display: flex; gap: 8px; margin-top: 12px; }
+    .bal-btn { flex:1; padding:9px; border-radius:9px; border:none; font-family:'Exo 2',sans-serif; font-size:12px; font-weight:600; cursor:pointer; }
+    .bal-btn.primary { background:linear-gradient(135deg,var(--gold),var(--gold2)); color:#000; }
+    .bal-btn.secondary { background:var(--bg3); color:var(--text); border:1px solid var(--border); }
+
+    /* PORTFOLIO CARD */
+    .portfolio-card {
+      background: linear-gradient(135deg, #0a1a0a, #0d0d1a);
+      border: 1px solid #FFD70033; border-radius: 14px; padding: 14px; margin-bottom: 10px;
+    }
+    .port-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .port-title { font-family: 'Orbitron', sans-serif; font-size: 11px; color: var(--gold); }
+    .port-badge { background: #FFD70022; border: 1px solid var(--gold); border-radius: 10px; padding: 2px 8px; font-size: 9px; color: var(--gold); }
+    .port-value { font-family: 'Orbitron', sans-serif; font-size: 18px; font-weight: 900; color: var(--text); }
+    .port-change-pos { font-size: 11px; color: var(--green); margin-top: 2px; }
+    .port-change-neg { font-size: 11px; color: var(--red); margin-top: 2px; }
+    .port-list { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+    .port-item { display: flex; justify-content: space-between; align-items: center; padding: 7px 10px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); }
+    .port-sym { font-family: 'Orbitron', sans-serif; font-size: 11px; color: var(--gold); }
+    .port-name { font-size: 9px; color: var(--muted); }
+    .port-price { font-family: 'Orbitron', sans-serif; font-size: 11px; text-align: right; }
+    .port-pct { font-size: 9px; text-align: right; margin-top: 1px; }
+
+    /* CRYPTO GRID */
+    .crypto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .crypto-card { background:var(--bg2); border:1px solid var(--border); border-radius:11px; padding:11px; cursor:pointer; transition:border-color 0.2s; }
+    .crypto-card:hover { border-color:var(--gold); }
+    .crypto-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+    .crypto-symbol { font-family:'Orbitron',sans-serif; font-size:11px; font-weight:700; color:var(--gold); }
+    .crypto-change { font-size:9px; font-weight:600; padding:2px 6px; border-radius:10px; }
+    .crypto-change.up { background:#00E67622; color:var(--green); }
+    .crypto-change.dn { background:#FF174422; color:var(--red); }
+    .crypto-price { font-family:'Orbitron',sans-serif; font-size:12px; font-weight:700; }
+    .crypto-name { font-size:9px; color:var(--muted); margin-top:2px; }
+
+    /* EARN */
+    .earn-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .earn-card { background:var(--bg2); border:1px solid var(--border); border-radius:11px; padding:13px; text-align:center; cursor:pointer; transition:all 0.2s; }
+    .earn-card:hover { border-color:var(--gold); transform:translateY(-2px); }
+    .earn-icon { font-size:22px; margin-bottom:6px; }
+    .earn-title { font-size:11px; font-weight:600; margin-bottom:3px; }
+    .earn-desc { font-size:9px; color:var(--muted); }
+    .earn-amount { font-family:'Orbitron',sans-serif; font-size:10px; color:var(--gold); margin-top:5px; }
+
+    /* REFERRAL */
+    .referral-card { background:linear-gradient(135deg,#1a0d00,#0d0d1a); border:1px solid #FFD70033; border-radius:14px; padding:14px; }
+    .ref-title { font-family:'Orbitron',sans-serif; font-size:12px; color:var(--gold); margin-bottom:3px; }
+    .ref-desc { font-size:10px; color:var(--muted); margin-bottom:10px; }
+    .ref-link-box { background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:9px 12px; display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+    .ref-link { font-size:9px; color:var(--gold); font-family:'Orbitron',sans-serif; }
+    .copy-btn { background:var(--gold); color:#000; border:none; border-radius:6px; padding:4px 10px; font-size:9px; font-weight:700; cursor:pointer; }
+    .ref-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .ref-stat { text-align:center; }
+    .ref-stat .val { font-family:'Orbitron',sans-serif; font-size:13px; color:var(--green); }
+    .ref-stat .lbl { font-size:8px; color:var(--muted); margin-top:2px; }
+
+    /* INVEST */
+    .invest-list { display:flex; flex-direction:column; gap:8px; }
+    .invest-item { background:var(--bg2); border:1px solid var(--border); border-radius:11px; padding:11px 13px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; transition:border-color 0.2s; }
+    .invest-item:hover { border-color:var(--gold); }
+    .invest-left { display:flex; align-items:center; gap:10px; }
+    .invest-icon { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; }
+    .invest-name { font-size:12px; font-weight:600; }
+    .invest-period { font-size:9px; color:var(--muted); }
+    .invest-return { font-family:'Orbitron',sans-serif; font-size:12px; color:var(--green); }
+
+    /* MARKET */
+    .market-list { display:flex; flex-direction:column; gap:8px; }
+    .market-item { background:var(--bg2); border:1px solid var(--border); border-radius:11px; padding:11px 13px; display:flex; align-items:center; justify-content:space-between; }
+    .market-left { display:flex; align-items:center; gap:10px; }
+    .market-rank { font-size:9px; color:var(--muted); width:14px; }
+    .market-info .name { font-size:12px; font-weight:600; }
+    .market-info .sym { font-size:9px; color:var(--muted); }
+    .market-right { text-align:right; }
+    .market-price { font-family:'Orbitron',sans-serif; font-size:11px; }
+    .market-chg { font-size:9px; margin-top:2px; }
+
+    /* PROFILE */
+    .profile-header { background:linear-gradient(135deg,var(--bg2),var(--bg3)); border:1px solid var(--border); border-radius:14px; padding:18px; text-align:center; margin-bottom:10px; }
+    .avatar { width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--gold2)); display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto 8px; }
+    .profile-name { font-family:'Orbitron',sans-serif; font-size:13px; color:var(--gold); }
+    .profile-level { font-size:10px; color:var(--muted); margin-top:3px; }
+    .profile-menu { display:flex; flex-direction:column; gap:8px; }
+    .menu-item { background:var(--bg2); border:1px solid var(--border); border-radius:11px; padding:13px 15px; display:flex; align-items:center; justify-content:space-between; cursor:pointer; }
+    .menu-item-left { display:flex; align-items:center; gap:11px; font-size:12px; }
+    .menu-icon { font-size:16px; }
+    .menu-arrow { color:var(--muted); }
+
+    /* BOTTOM NAV */
+    .bottom-nav { position:fixed; bottom:0; left:0; right:0; background:rgba(5,5,13,0.97); backdrop-filter:blur(20px); border-top:1px solid var(--border); display:flex; z-index:100; padding:6px 0 10px; }
+    .nav-item { flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; cursor:pointer; padding:4px; }
+    .nav-item.active .nav-icon, .nav-item.active .nav-label { color:var(--gold); }
+    .nav-icon { font-size:19px; color:var(--muted); transition:color 0.2s; }
+    .nav-label { font-size:8px; color:var(--muted); letter-spacing:0.5px; transition:color 0.2s; }
+
+    /* TOAST */
+    .toast { position:fixed; top:65px; left:50%; transform:translateX(-50%); background:var(--green); color:#000; padding:7px 18px; border-radius:20px; font-size:11px; font-weight:700; z-index:999; opacity:0; transition:opacity 0.3s; pointer-events:none; white-space:nowrap; }
+    .toast.show { opacity:1; }
+
+    .page { display:none; }
+    .page.active { display:block; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+    .fade-up { animation:fadeUp 0.35s ease forwards; }
+
+    /* QR CODE */
+    .qr-section {
+      background: linear-gradient(135deg, #0d0020, #0d0d1a);
+      border: 1px solid #9B59B622;
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .qr-section::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #9B59B633, transparent);
+    }
+    .qr-title { font-family:'Orbitron',sans-serif; font-size:12px; color:#D7BDE2; margin-bottom:4px; }
+    .qr-desc { font-size:10px; color:var(--muted); margin-bottom:14px; }
+    .qr-wrapper {
+      display: inline-block;
+      background: white;
+      border-radius: 14px;
+      padding: 12px;
+      box-shadow: 0 0 30px #9B59B655, 0 0 60px #9B59B622;
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .qr-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #FFD700, #9B59B6, #00E676, #FFD700);
+      z-index: -1;
+      animation: qrBorder 3s linear infinite;
+      background-size: 300%;
+    }
+    @keyframes qrBorder {
+      0%{background-position:0%} 50%{background-position:100%} 100%{background-position:0%}
+    }
+    .qr-canvas { display:block; border-radius:8px; }
+    .qr-logo-overlay {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px; height: 36px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .qr-actions { display:flex; gap:8px; justify-content:center; }
+    .qr-btn {
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: none;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .qr-btn.gold { background: linear-gradient(135deg, var(--gold), var(--gold2)); color:#000; }
+    .qr-btn.outline { background: transparent; border: 1px solid #9B59B6; color: #D7BDE2; }
+    .qr-scan-hint {
+      font-size: 9px;
+      color: var(--muted);
+      margin-top: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* LOADING */
+    .loading { text-align:center; padding:20px; color:var(--muted); font-size:11px; }
+    .spinner { display:inline-block; width:14px; height:14px; border:2px solid var(--border); border-top-color:var(--gold); border-radius:50%; animation:spin 0.8s linear infinite; vertical-align:middle; margin-right:6px; }
+    @keyframes spin { to{transform:rotate(360deg)} }
+
+    /* TAB PILLS */
+    .tab-pills { display:flex; gap:6px; margin-bottom:10px; overflow-x:auto; padding-bottom:4px; }
+    .tab-pill { background:var(--bg2); border:1px solid var(--border); border-radius:20px; padding:5px 14px; font-size:10px; cursor:pointer; white-space:nowrap; transition:all 0.2s; font-family:'Exo 2',sans-serif; color:var(--text); }
+    .tab-pill.active { background:var(--gold); color:#000; border-color:var(--gold); font-weight:700; }
+  </style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo">₿ JAMSHAD<span>BHATTI</span></div>
+  <div class="live-badge"><div class="live-dot"></div>LIVE</div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" id="ticker-inner">
+    <span class="ticker-item">BTC <span class="up" id="t-btc">$68,420 ▲2.4%</span></span>
+    <span class="ticker-item">ETH <span class="up" id="t-eth">$3,680 ▲1.8%</span></span>
+    <span class="ticker-item">DOW <span class="up">50,287 ▲0.56%</span></span>
+    <span class="ticker-item">S&P500 <span class="up">7,445 ▲0.17%</span></span>
+    <span class="ticker-item">NASDAQ <span class="up">26,288 ▲0.07%</span></span>
+    <span class="ticker-item">AAPL <span class="up">$304.99 ▲0.91%</span></span>
+    <span class="ticker-item">GOLD <span class="up">$2,345 ▲0.6%</span></span>
+    <span class="ticker-item">BNB <span class="up">$612 ▲3.1%</span></span>
+    <span class="ticker-item">SOL <span class="up">$162 ▲3.2%</span></span>
+    <span class="ticker-item">XRP <span class="dn">$0.52 ▼1.2%</span></span>
+    <span class="ticker-item">EUR/USD <span class="dn">1.0841 ▼0.3%</span></span>
+    <!-- repeat -->
+    <span class="ticker-item">BTC <span class="up">$68,420 ▲2.4%</span></span>
+    <span class="ticker-item">ETH <span class="up">$3,680 ▲1.8%</span></span>
+    <span class="ticker-item">DOW <span class="up">50,287 ▲0.56%</span></span>
+    <span class="ticker-item">S&P500 <span class="up">7,445 ▲0.17%</span></span>
+    <span class="ticker-item">NASDAQ <span class="up">26,288 ▲0.07%</span></span>
+    <span class="ticker-item">AAPL <span class="up">$304.99 ▲0.91%</span></span>
+    <span class="ticker-item">GOLD <span class="up">$2,345 ▲0.6%</span></span>
+    <span class="ticker-item">BNB <span class="up">$612 ▲3.1%</span></span>
+    <span class="ticker-item">SOL <span class="up">$162 ▲3.2%</span></span>
+    <span class="ticker-item">XRP <span class="dn">$0.52 ▼1.2%</span></span>
+    <span class="ticker-item">EUR/USD <span class="dn">1.0841 ▼0.3%</span></span>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- HOME PAGE -->
+  <div class="page active fade-up" id="page-home">
+    <div class="hero">
+      <div class="hero-badge">🌍 WORLD HUB — #1 PLATFORM</div>
+      <h1>JamshadBhatti<br>Finance</h1>
+      <p>Earn • Invest • Trade — All in One App</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card"><div class="num">500K+</div><div class="lbl">MEMBERS</div></div>
+      <div class="stat-card"><div class="num">$12M+</div><div class="lbl">PAID OUT</div></div>
+      <div class="stat-card"><div class="num">180+</div><div class="lbl">COUNTRIES</div></div>
+    </div>
+
+    <!-- BALANCE -->
+    <div class="section">
+      <div class="section-title">💰 MY WALLET</div>
+      <div class="balance-card">
+        <div class="balance-label">TOTAL BALANCE</div>
+        <div class="balance-amount">$2,450.00</div>
+        <div class="balance-sub">↑ +$125.50 today (+5.4%)</div>
+        <div class="balance-actions">
+          <button class="bal-btn primary" onclick="showToast('Withdrawal request sent! ✅')">💸 Withdraw</button>
+          <button class="bal-btn secondary" onclick="showToast('Deposit feature coming soon!')">➕ Deposit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GOOGLE FINANCE PORTFOLIO -->
+    <div class="section">
+      <div class="section-title">📊 MY PORTFOLIO</div>
+      <div class="portfolio-card">
+        <div class="port-header">
+          <div class="port-title">🏆 Jamshadbhtti Global</div>
+          <div class="port-badge">GOOGLE FINANCE</div>
+        </div>
+        <div class="port-value">$1,269.22</div>
+        <div class="port-change-neg">▼ -$19.62 (-1.52%) Today</div>
+        <div class="port-list">
+          <div class="port-item">
+            <div><div class="port-sym">.DJI</div><div class="port-name">Dow Jones</div></div>
+            <div><div class="port-price up">50,287.03</div><div class="port-pct up">+0.56%</div></div>
+          </div>
+          <div class="port-item">
+            <div><div class="port-sym">.INX</div><div class="port-name">S&P 500</div></div>
+            <div><div class="port-price up">7,445.57</div><div class="port-pct up">+0.17%</div></div>
+          </div>
+          <div class="port-item">
+            <div><div class="port-sym">.IXIC</div><div class="port-name">Nasdaq</div></div>
+            <div><div class="port-price up">26,288.52</div><div class="port-pct up">+0.07%</div></div>
+          </div>
+          <div class="port-item">
+            <div><div class="port-sym">AAPL</div><div class="port-name">Apple Inc</div></div>
+            <div><div class="port-price up">$304.99</div><div class="port-pct up">+0.91%</div></div>
+          </div>
+          <div class="port-item">
+            <div><div class="port-sym">000001</div><div class="port-name">SSE China</div></div>
+            <div><div class="port-price dn">4,077.28</div><div class="port-pct dn">-2.04%</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOIN ALL MEMBERS -->
+      <div class="portfolio-card" style="border-color:#00E67633;">
+        <div class="port-header">
+          <div class="port-title" style="color:var(--green)">🌍 Join All Members</div>
+          <div class="port-badge" style="color:var(--green);border-color:var(--green);background:#00E67611;">COMMUNITY</div>
+        </div>
+        <div class="port-value">$12,273,183,273</div>
+        <div class="port-change-pos">▲ +$12,978,963 (+0.11%) Today</div>
+      </div>
+    </div>
+
+    <!-- LIVE CRYPTO -->
+    <div class="section">
+      <div class="section-title">📈 LIVE CRYPTO</div>
+      <div class="crypto-grid" id="crypto-home">
+        <div class="crypto-card"><div class="crypto-top"><span class="crypto-symbol">BTC</span><span class="crypto-change up" id="h-btc-c">+2.4%</span></div><div class="crypto-price" id="h-btc-p">$68,420</div><div class="crypto-name">Bitcoin</div></div>
+        <div class="crypto-card"><div class="crypto-top"><span class="crypto-symbol">ETH</span><span class="crypto-change up" id="h-eth-c">+1.8%</span></div><div class="crypto-price" id="h-eth-p">$3,680</div><div class="crypto-name">Ethereum</div></div>
+        <div class="crypto-card"><div class="crypto-top"><span class="crypto-symbol">BNB</span><span class="crypto-change up" id="h-bnb-c">+3.1%</span></div><div class="crypto-price" id="h-bnb-p">$612</div><div class="crypto-name">BNB</div></div>
+        <div class="crypto-card"><div class="crypto-top"><span class="crypto-symbol">SOL</span><span class="crypto-change up" id="h-sol-c">+3.2%</span></div><div class="crypto-price" id="h-sol-p">$162</div><div class="crypto-name">Solana</div></div>
+      </div>
+    </div>
+
+    <!-- EARN -->
+    <div class="section">
+      <div class="section-title">💎 EARN MONEY</div>
+      <div class="earn-grid">
+        <div class="earn-card" onclick="showToast('Daily bonus claimed! +$5 ✅')"><div class="earn-icon">🎁</div><div class="earn-title">Daily Bonus</div><div class="earn-desc">Login daily & earn</div><div class="earn-amount">+$5/day</div></div>
+        <div class="earn-card" onclick="navTo('referral')"><div class="earn-icon">👥</div><div class="earn-title">Refer & Earn</div><div class="earn-desc">Invite friends</div><div class="earn-amount">+$10/refer</div></div>
+        <div class="earn-card" onclick="showToast('Watch & Earn coming soon!')"><div class="earn-icon">📺</div><div class="earn-title">Watch & Earn</div><div class="earn-desc">Watch videos</div><div class="earn-amount">+$2/video</div></div>
+        <div class="earn-card" onclick="navTo('invest')"><div class="earn-icon">📊</div><div class="earn-title">Invest</div><div class="earn-desc">Grow money</div><div class="earn-amount">Up to 25%/mo</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARKET PAGE -->
+  <div class="page fade-up" id="page-market">
+    <div style="padding:14px 16px 6px;">
+      <div class="section-title">📊 LIVE MARKET</div>
+      <div class="tab-pills">
+        <div class="tab-pill active" onclick="filterMarket('all',this)">All</div>
+        <div class="tab-pill" onclick="filterMarket('crypto',this)">Crypto</div>
+        <div class="tab-pill" onclick="filterMarket('stocks',this)">Stocks</div>
+        <div class="tab-pill" onclick="filterMarket('forex',this)">Forex</div>
+        <div class="tab-pill" onclick="filterMarket('indices',this)">Indices</div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="market-list" id="market-list">
+        <!-- CRYPTO -->
+        <div class="market-item" data-cat="crypto"><div class="market-left"><div class="market-rank">1</div><div class="market-info"><div class="name">Bitcoin</div><div class="sym">BTC • Crypto</div></div></div><div class="market-right"><div class="market-price up" id="m-btc-p">$68,420</div><div class="market-chg up" id="m-btc-c">▲ +2.4%</div></div></div>
+        <div class="market-item" data-cat="crypto"><div class="market-left"><div class="market-rank">2</div><div class="market-info"><div class="name">Ethereum</div><div class="sym">ETH • Crypto</div></div></div><div class="market-right"><div class="market-price up">$3,680</div><div class="market-chg up">▲ +1.8%</div></div></div>
+        <div class="market-item" data-cat="crypto"><div class="market-left"><div class="market-rank">3</div><div class="market-info"><div class="name">BNB</div><div class="sym">BNB • Crypto</div></div></div><div class="market-right"><div class="market-price up">$612</div><div class="market-chg up">▲ +3.1%</div></div></div>
+        <div class="market-item" data-cat="crypto"><div class="market-left"><div class="market-rank">4</div><div class="market-info"><div class="name">Solana</div><div class="sym">SOL • Crypto</div></div></div><div class="market-right"><div class="market-price up">$162</div><div class="market-chg up">▲ +3.2%</div></div></div>
+        <div class="market-item" data-cat="crypto"><div class="market-left"><div class="market-rank">5</div><div class="market-info"><div class="name">XRP</div><div class="sym">XRP • Crypto</div></div></div><div class="market-right"><div class="market-price dn">$0.52</div><div class="market-chg dn">▼ -1.2%</div></div></div>
+        <div class="market-item" data-cat="crypto"><div class="market-left"><div class="market-rank">6</div><div class="market-info"><div class="name">Dogecoin</div><div class="sym">DOGE • Crypto</div></div></div><div class="market-right"><div class="market-price up">$0.162</div><div class="market-chg up">▲ +5.1%</div></div></div>
+        <!-- STOCKS -->
+        <div class="market-item" data-cat="stocks"><div class="market-left"><div class="market-rank">7</div><div class="market-info"><div class="name">Apple Inc</div><div class="sym">AAPL • Stock</div></div></div><div class="market-right"><div class="market-price up">$304.99</div><div class="market-chg up">▲ +0.91%</div></div></div>
+        <div class="market-item" data-cat="stocks"><div class="market-left"><div class="market-rank">8</div><div class="market-info"><div class="name">VTSAX</div><div class="sym">VTSAX • Vanguard</div></div></div><div class="market-right"><div class="market-price up">$177.29</div><div class="market-chg up">▲ +1.19%</div></div></div>
+        <div class="market-item" data-cat="stocks"><div class="market-left"><div class="market-rank">9</div><div class="market-info"><div class="name">SSE China</div><div class="sym">000001 • Stock</div></div></div><div class="market-right"><div class="market-price dn">4,077.28</div><div class="market-chg dn">▼ -2.04%</div></div></div>
+        <!-- INDICES -->
+        <div class="market-item" data-cat="indices"><div class="market-left"><div class="market-rank">10</div><div class="market-info"><div class="name">Dow Jones</div><div class="sym">.DJI • Index</div></div></div><div class="market-right"><div class="market-price up">50,287</div><div class="market-chg up">▲ +0.56%</div></div></div>
+        <div class="market-item" data-cat="indices"><div class="market-left"><div class="market-rank">11</div><div class="market-info"><div class="name">S&P 500</div><div class="sym">.INX • Index</div></div></div><div class="market-right"><div class="market-price up">7,445</div><div class="market-chg up">▲ +0.17%</div></div></div>
+        <div class="market-item" data-cat="indices"><div class="market-left"><div class="market-rank">12</div><div class="market-info"><div class="name">Nasdaq</div><div class="sym">.IXIC • Index</div></div></div><div class="market-right"><div class="market-price up">26,288</div><div class="market-chg up">▲ +0.07%</div></div></div>
+        <!-- FOREX -->
+        <div class="market-item" data-cat="forex"><div class="market-left"><div class="market-rank">13</div><div class="market-info"><div class="name">EUR/USD</div><div class="sym">EURUSD • Forex</div></div></div><div class="market-right"><div class="market-price dn">1.0841</div><div class="market-chg dn">▼ -0.3%</div></div></div>
+        <div class="market-item" data-cat="forex"><div class="market-left"><div class="market-rank">14</div><div class="market-info"><div class="name">GBP/USD</div><div class="sym">GBPUSD • Forex</div></div></div><div class="market-right"><div class="market-price up">1.2654</div><div class="market-chg up">▲ +0.2%</div></div></div>
+        <div class="market-item" data-cat="forex"><div class="market-left"><div class="market-rank">15</div><div class="market-info"><div class="name">Gold</div><div class="sym">XAU/USD • Forex</div></div></div><div class="market-right"><div class="market-price up">$2,345</div><div class="market-chg up">▲ +0.6%</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERRAL PAGE -->
+  <div class="page fade-up" id="page-referral">
+    <div style="padding:14px 16px 6px;"><div class="section-title">👥 REFER & EARN</div></div>
+
+    <!-- QR CODE -->
+    <div class="section">
+      <div class="qr-section">
+        <div class="qr-title">✨ Scan QR Code to Join</div>
+        <div class="qr-desc">Share this QR code — friends scan & you earn $10!</div>
+        <div class="qr-wrapper">
+          <canvas class="qr-canvas" id="qr-canvas" width="160" height="160"></canvas>
+          <div class="qr-logo-overlay">₿</div>
+        </div>
+        <div class="qr-actions">
+          <button class="qr-btn gold" onclick="downloadQR()">⬇️ Download</button>
+          <button class="qr-btn outline" onclick="shareQR()">📤 Share</button>
+        </div>
+        <div class="qr-scan-hint">📱 SCAN WITH CAMERA TO OPEN APP</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="referral-card">
+        <div class="ref-title">🎯 Your Referral Link</div>
+        <div class="ref-desc">Invite friends & earn $10 per referral!</div>
+        <div class="ref-link-box">
+          <span class="ref-link">jamshadbhtti1.github.io/?ref=JB7291</span>
+          <button class="copy-btn" onclick="copyRef()">COPY</button>
+        </div>
+        <div class="ref-stats">
+          <div class="ref-stat"><div class="val">24</div><div class="lbl">REFERRALS</div></div>
+          <div class="ref-stat"><div class="val">$240</div><div class="lbl">EARNED</div></div>
+          <div class="ref-stat"><div class="val">8</div><div class="lbl">ACTIVE</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">📤 SHARE NOW</div>
+      <div class="earn-grid">
+        <div class="earn-card" onclick="shareWA()"><div class="earn-icon">💬</div><div class="earn-title">WhatsApp</div><div class="earn-desc">Share to groups</div></div>
+        <div class="earn-card" onclick="shareFB()"><div class="earn-icon">📘</div><div class="earn-title">Facebook</div><div class="earn-desc">Share on wall</div></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- INVEST PAGE -->
+  <div class="page fade-up" id="page-invest">
+    <div style="padding:14px 16px 6px;"><div class="section-title">💼 INVESTMENT PLANS</div></div>
+    <div class="section">
+      <div class="invest-list">
+        <div class="invest-item" onclick="showToast('Starter Plan — Min $50 ✅')"><div class="invest-left"><div class="invest-icon" style="background:#FFD70022">🥉</div><div><div class="invest-name">Starter Plan</div><div class="invest-period">30 days • Min $50</div></div></div><div class="invest-return">+10%</div></div>
+        <div class="invest-item" onclick="showToast('Silver Plan — Min $200 ✅')"><div class="invest-left"><div class="invest-icon" style="background:#C0C0C022">🥈</div><div><div class="invest-name">Silver Plan</div><div class="invest-period">30 days • Min $200</div></div></div><div class="invest-return">+15%</div></div>
+        <div class="invest-item" onclick="showToast('Gold Plan — Min $500 ✅')"><div class="invest-left"><div class="invest-icon" style="background:#FFD70022">🥇</div><div><div class="invest-name">Gold Plan</div><div class="invest-period">30 days • Min $500</div></div></div><div class="invest-return">+20%</div></div>
+        <div class="invest-item" onclick="showToast('Diamond Plan — Min $1000 ✅')"><div class="invest-left"><div class="invest-icon" style="background:#00E67622">💎</div><div><div class="invest-name">Diamond Plan</div><div class="invest-period">30 days • Min $1000</div></div></div><div class="invest-return">+25%</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFILE PAGE -->
+  <div class="page fade-up" id="page-profile">
+    <div style="padding:14px;">
+      <div class="profile-header">
+        <div class="avatar">👤</div>
+        <div class="profile-name">Jamshadbhtti1</div>
+        <div class="profile-level">⭐ Diamond Member • Level 5</div>
+        <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+          <div class="stat-card"><div class="num">$1,269</div><div class="lbl">PORTFOLIO</div></div>
+          <div class="stat-card"><div class="num">$2,450</div><div class="lbl">WALLET</div></div>
+          <div class="stat-card"><div class="num">$240</div><div class="lbl">REFERRAL</div></div>
+        </div>
+      </div>
+      <div class="profile-menu">
+        <div class="menu-item" onclick="showToast('Withdrawal History')"><div class="menu-item-left"><span class="menu-icon">💸</span> Withdrawal History</div><span>›</span></div>
+        <div class="menu-item" onclick="showToast('Transaction History')"><div class="menu-item-left"><span class="menu-icon">📋</span> Transactions</div><span>›</span></div>
+        <div class="menu-item" onclick="navTo('referral')"><div class="menu-item-left"><span class="menu-icon">👥</span> My Referrals (24)</div><span>›</span></div>
+        <div class="menu-item" onclick="window.open('https://finance.google.com')"><div class="menu-item-left"><span class="menu-icon">📊</span> Google Finance</div><span>›</span></div>
+        <div class="menu-item" onclick="window.open('https://jamshadbhtti1.github.io')"><div class="menu-item-left"><span class="menu-icon">🌐</span> Visit Website</div><span>›</span></div>
+        <div class="menu-item" onclick="shareWA()"><div class="menu-item-left"><span class="menu-icon">📤</span> Share App</div><span>›</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <div class="nav-item active" onclick="navTo('home')" id="nav-home"><div class="nav-icon">🏠</div><div class="nav-label">HOME</div></div>
+  <div class="nav-item" onclick="navTo('market')" id="nav-market"><div class="nav-icon">📈</div><div class="nav-label">MARKET</div></div>
+  <div class="nav-item" onclick="navTo('referral')" id="nav-referral"><div class="nav-icon">👥</div><div class="nav-label">REFER</div></div>
+  <div class="nav-item" onclick="navTo('invest')" id="nav-invest"><div class="nav-icon">💼</div><div class="nav-label">INVEST</div></div>
+  <div class="nav-item" onclick="navTo('profile')" id="nav-profile"><div class="nav-icon">👤</div><div class="nav-label">PROFILE</div></div>
+</div>
+
+<script>
+function navTo(p) {
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(x=>x.classList.remove('active'));
+  document.getElementById('page-'+p).classList.add('active');
+  document.getElementById('nav-'+p).classList.add('active');
+  window.scrollTo(0,0);
+}
+function showToast(msg) {
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
+}
+function copyRef() {
+  navigator.clipboard.writeText('https://jamshadbhtti1.github.io/?ref=JB7291')
+    .then(()=>showToast('✅ Referral link copied!'))
+    .catch(()=>showToast('✅ Link copied!'));
+}
+function shareWA() {
+  window.open('https://wa.me/?text=Join%20JamshadBhatti%20Finance%20World%20Hub%20%F0%9F%8C%8D%20Pakistan%27s%20%231%20Earning%20Platform!%20Live%20Stocks%2C%20Crypto%20%26%20Earn%20Money!%20https%3A%2F%2Fjamshadbhtti1.github.io%2F%3Fref%3DJB7291');
+}
+function shareFB() {
+  window.open('https://www.facebook.com/sharer/sharer.php?u=https://jamshadbhtti1.github.io/');
+}
+function filterMarket(cat, el) {
+  document.querySelectorAll('.tab-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.market-item').forEach(item=>{
+    if(cat==='all'||item.dataset.cat===cat) item.style.display='flex';
+    else item.style.display='none';
+  });
+}
+
+// ===== QR CODE GENERATOR =====
+(function(){
+  const URL = 'https://jamshadbhtti1.github.io/?ref=JB7291';
+  function drawQR() {
+    const canvas = document.getElementById('qr-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const size = 160;
+    const cells = 25;
+    const cell = size / cells;
+
+    // Use Google Charts QR API via image
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function() {
+      ctx.clearRect(0,0,size,size);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0,0,size,size);
+      ctx.drawImage(img, 0, 0, size, size);
+    };
+    img.onerror = function() { drawFallbackQR(ctx, size); };
+    img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=' + encodeURIComponent(URL) + '&margin=4&color=000000&bgcolor=ffffff&ecc=H';
+  }
+
+  function drawFallbackQR(ctx, size) {
+    // Draw a stylized fake QR pattern as fallback
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0,0,size,size);
+    ctx.fillStyle = '#111111';
+    const cells = 21, cell = size/cells;
+    // Corners
+    [[0,0],[14,0],[0,14]].forEach(([cx,cy])=>{
+      ctx.fillRect(cx*cell,cy*cell,7*cell,7*cell);
+      ctx.fillStyle='#ffffff';
+      ctx.fillRect((cx+1)*cell,(cy+1)*cell,5*cell,5*cell);
+      ctx.fillStyle='#111111';
+      ctx.fillRect((cx+2)*cell,(cy+2)*cell,3*cell,3*cell);
+      ctx.fillStyle='#111111';
+    });
+    // Random data pattern
+    for(let r=0;r<cells;r++) for(let c=0;c<cells;c++) {
+      if(Math.random()>0.5 && !((r<8&&c<8)||(r<8&&c>12)||(r>12&&c<8)))
+        ctx.fillRect(c*cell,r*cell,cell,cell);
+    }
+  }
+
+  window.addEventListener('load', drawQR);
+  document.addEventListener('DOMContentLoaded', drawQR);
+
+  window.downloadQR = function() {
+    const canvas = document.getElementById('qr-canvas');
+    const link = document.createElement('a');
+    link.download = 'JamshadBhatti-Finance-QR.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    showToast('✅ QR Code downloaded!');
+  };
+
+  window.shareQR = function() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'JamshadBhatti Finance App',
+        text: '🌍 Join Pakistan\'s #1 Earning Platform! Scan QR or click link 👇',
+        url: URL
+      });
+    } else {
+      navigator.clipboard.writeText(URL).then(()=>showToast('✅ Link copied to share!'));
+    }
+  };
+})();
+// ===== END QR =====
+
+const prices = { btc:68420, eth:3680, bnb:612, sol:162 };
+const changes = { btc:2.4, eth:1.8, bnb:3.1, sol:3.2 };
+function updateLive() {
+  Object.keys(prices).forEach(sym=>{
+    const fl=(Math.random()-0.5)*0.004;
+    prices[sym]*=(1+fl);
+    changes[sym]+=(Math.random()-0.5)*0.05;
+    const p=prices[sym];
+    const c=changes[sym];
+    const pos=c>=0;
+    const pFmt=sym==='btc'?'$'+p.toLocaleString('en',{maximumFractionDigits:0}):
+               sym==='eth'?'$'+p.toFixed(0):
+               sym==='bnb'?'$'+p.toFixed(0):
+               '$'+p.toFixed(1);
+    const cFmt=(pos?'+':'')+c.toFixed(2)+'%';
+    const el_p=document.getElementById('h-'+sym+'-p');
+    const el_c=document.getElementById('h-'+sym+'-c');
+    if(el_p){el_p.textContent=pFmt;}
+    if(el_c){el_c.textContent=cFmt;el_c.className='crypto-change '+(pos?'up':'dn');}
+  });
+}
+setInterval(updateLive,4000);
+</script>
+</body>
+</html>
