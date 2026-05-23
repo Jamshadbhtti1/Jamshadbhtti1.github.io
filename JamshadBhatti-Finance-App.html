@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ur" dir="ltr">
 <head>
 <meta charset="UTF-8">
@@ -114,6 +114,28 @@
   .search-box::placeholder{color:var(--muted)}
 
   .loading{text-align:center;padding:30px;color:var(--muted);font-size:12px}
+
+  /* EARN BANNER */
+  .earn-banner{background:linear-gradient(135deg,#1a0a00,#2a1500);border:1px solid #f7931a44;border-radius:12px;padding:16px;margin:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none}
+  .earn-banner:hover{border-color:#f7931a}
+  .earn-left{}
+  .earn-title{font-family:'Orbitron',sans-serif;font-size:11px;color:#f7931a;letter-spacing:1px;margin-bottom:4px}
+  .earn-desc{font-size:10px;color:#a07040;line-height:1.5}
+  .earn-btn{background:linear-gradient(135deg,#f7931a,#ffa500);color:#000;border:none;border-radius:8px;padding:10px 16px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;font-family:'IBM Plex Mono',monospace;text-decoration:none;display:inline-block}
+
+  /* EARN TAB */
+  .earn-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px;text-align:center}
+  .earn-icon{font-size:40px;margin-bottom:8px}
+  .earn-card-title{font-size:13px;font-weight:700;color:var(--green2);margin-bottom:6px}
+  .earn-card-desc{font-size:11px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+  .earn-link{display:block;background:linear-gradient(135deg,#f7931a,#ffa500);color:#000;border-radius:8px;padding:12px;font-size:12px;font-weight:700;text-decoration:none;font-family:'IBM Plex Mono',monospace}
+  .earn-link:hover{opacity:.9}
+  .commission-box{background:#060f08;border:1px solid #f7931a33;border-radius:10px;padding:14px;margin-bottom:12px}
+  .commission-title{font-size:9px;letter-spacing:2px;color:#f7931a;margin-bottom:8px}
+  .commission-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .commission-item{text-align:center;padding:10px;background:#0a1f0f;border-radius:8px}
+  .commission-pct{font-size:18px;font-weight:700;color:#f7931a}
+  .commission-label{font-size:9px;color:var(--muted);margin-top:2px}
 </style>
 </head>
 <body>
@@ -138,12 +160,22 @@
   <div class="rate-item"><div class="rate-label">GOLD/PKR</div><div class="rate-value" id="goldRate">—</div><div class="rate-change up" id="goldChg"></div></div>
 </div>
 
+<!-- EARN BANNER -->
+<a class="earn-banner" href="https://www.binance.com/referral/earn-together/refer2earn-usdc/claim?hl=en&ref=GRO_28502_MADK0&utm_source=referral_entrance" target="_blank">
+  <div class="earn-left">
+    <div class="earn-title">🏆 JOIN BINANCE & EARN UP TO 400 USDC!</div>
+    <div class="earn-desc">Aapke dost join karein — dono kamaein!<br>#BinanceReferralBoost</div>
+  </div>
+  <span class="earn-btn">JOIN →</span>
+</a>
+
 <!-- TABS -->
 <div class="tabs">
   <button class="tab active" onclick="showTab('crypto')">📈 CRYPTO</button>
   <button class="tab" onclick="showTab('tracker')">💰 TRACKER</button>
   <button class="tab" onclick="showTab('budget')">📊 BUDGET</button>
   <button class="tab" onclick="showTab('ai')">🤖 AI ADVISOR</button>
+  <button class="tab" onclick="showTab('earn')">💵 EARN</button>
 </div>
 
 <!-- CRYPTO TAB -->
@@ -206,6 +238,40 @@
       <input class="fin-input" id="budCatAmt" type="number" placeholder="Budget ₨">
       <button class="add-btn" onclick="addBudgetCat()">ADD</button>
     </div>
+  </div>
+</div>
+
+<!-- EARN TAB -->
+<div class="section" id="tab-earn">
+  <div class="commission-box">
+    <div class="commission-title">💰 AAPKI EARNING POTENTIAL</div>
+    <div class="commission-grid">
+      <div class="commission-item"><div class="commission-pct">20%</div><div class="commission-label">Binance Commission</div></div>
+      <div class="commission-item"><div class="commission-pct">400</div><div class="commission-label">Max USDC Earn</div></div>
+      <div class="commission-item"><div class="commission-pct">∞</div><div class="commission-label">Unlimited Referrals</div></div>
+      <div class="commission-item"><div class="commission-pct">24/7</div><div class="commission-label">Auto Earning</div></div>
+    </div>
+  </div>
+
+  <div class="earn-card">
+    <div class="earn-icon">🏆</div>
+    <div class="earn-card-title">BINANCE REFERRAL PROGRAM</div>
+    <div class="earn-card-desc">Apne dosto ko Binance join karaen aur har trade pe <strong style="color:#f7931a">20% commission</strong> kamaen! Jitne zyada dost — utni zyada kamai!</div>
+    <a class="earn-link" href="https://www.binance.com/referral/earn-together/refer2earn-usdc/claim?hl=en&ref=GRO_28502_MADK0&utm_source=referral_entrance" target="_blank">🚀 ABHI JOIN KARO — FREE!</a>
+  </div>
+
+  <div class="earn-card">
+    <div class="earn-icon">₿</div>
+    <div class="earn-card-title">CRYPTO TRADING</div>
+    <div class="earn-card-desc">Bitcoin, Ethereum aur 350+ coins trade karein. Live prices dekh ke sahi waqt pe invest karein!</div>
+    <a class="earn-link" href="https://www.binance.com/referral/earn-together/refer2earn-usdc/claim?hl=en&ref=GRO_28502_MADK0&utm_source=referral_entrance" target="_blank">📈 TRADING SHURU KARO</a>
+  </div>
+
+  <div class="earn-card">
+    <div class="earn-icon">🤝</div>
+    <div class="earn-card-title">APNA REFERRAL SHARE KARO</div>
+    <div class="earn-card-desc">Ye app share karein — har naye user se <strong style="color:#f7931a">aapko commission</strong> milega automatically!</div>
+    <button class="earn-link" onclick="shareApp()" style="border:none;cursor:pointer;width:100%">📤 APP SHARE KARO</button>
   </div>
 </div>
 
@@ -286,203 +352,4 @@ const COINS_LIST = [
   {id:'dogecoin',sym:'DOGE',name:'Dogecoin'},
   {id:'cardano',sym:'ADA',name:'Cardano'},
   {id:'tron',sym:'TRX',name:'TRON'},
-  {id:'shiba-inu',sym:'SHIB',name:'Shiba Inu'},
-  {id:'polkadot',sym:'DOT',name:'Polkadot'},
-];
-
-function fmtPrice(n) {
-  if (!n && n !== 0) return '—';
-  if (n < 0.01) return '$' + n.toFixed(6);
-  if (n < 1) return '$' + n.toFixed(4);
-  return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
-}
-
-function sparkSVG(data, positive) {
-  if (!data || data.length < 2) return '';
-  const W=70, H=28;
-  const min = Math.min(...data), max = Math.max(...data);
-  const range = max - min || 1;
-  const pts = data.map((v,i) => {
-    const x = (i/(data.length-1))*W;
-    const y = H - ((v-min)/range)*H;
-    return x+','+y;
-  }).join(' ');
-  const color = positive ? '#00e676' : '#ff4444';
-  return `<svg width="${W}" height="${H}"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
-}
-
-async function fetchCoins() {
-  try {
-    const ids = COINS_LIST.map(c=>c.id).join(',');
-    const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ids}&order=market_cap_desc&sparkline=true&price_change_percentage=24h`);
-    coins = await res.json();
-    renderCoins(coins);
-  } catch(e) {
-    document.getElementById('coinList').innerHTML = '<div class="empty">Network error — retry karo</div>';
-  }
-}
-
-function renderCoins(list) {
-  if (!list.length) { document.getElementById('coinList').innerHTML = '<div class="empty">Koi result nahi</div>'; return; }
-  document.getElementById('coinList').innerHTML = list.map((d, i) => {
-    const chg = d.price_change_percentage_24h || 0;
-    const pos = chg >= 0;
-    const spark = d.sparkline_in_7d?.price;
-    return `<div class="coin-row">
-      <span class="coin-num">${i+1}</span>
-      <span class="coin-info">
-        <img class="coin-img" src="${d.image}" onerror="this.style.display='none'">
-        <span><div class="coin-name">${d.name}</div><div class="coin-sym">${d.symbol?.toUpperCase()}</div></span>
-      </span>
-      <span class="coin-price">${fmtPrice(d.current_price)}</span>
-      <span class="coin-change ${pos?'up':'down'}">${pos?'▲':'▼'}${Math.abs(chg).toFixed(2)}%</span>
-      <span class="coin-spark">${spark ? sparkSVG(spark.slice(-20), pos) : ''}</span>
-    </div>`;
-  }).join('');
-}
-
-function filterCoins() {
-  const q = document.getElementById('coinSearch').value.toLowerCase();
-  const filtered = coins.filter(c => c.name.toLowerCase().includes(q) || c.symbol?.toLowerCase().includes(q));
-  renderCoins(filtered);
-}
-
-// ===== TRANSACTIONS =====
-function save() {
-  localStorage.setItem('jb_txns', JSON.stringify(transactions));
-  localStorage.setItem('jb_budgets', JSON.stringify(budgets));
-  localStorage.setItem('jb_income', monthlyIncome);
-}
-
-function addTxn() {
-  const desc = document.getElementById('txnDesc').value.trim();
-  const amt = parseFloat(document.getElementById('txnAmt').value);
-  const type = document.getElementById('txnType').value;
-  const cat = document.getElementById('txnCat').value;
-  if (!desc || !amt) return;
-  transactions.unshift({id: Date.now(), desc, amt, type, cat, date: new Date().toLocaleDateString('en-PK')});
-  save();
-  document.getElementById('txnDesc').value = '';
-  document.getElementById('txnAmt').value = '';
-  renderTxns();
-  updateBudgetSpend();
-}
-
-function deleteTxn(id) {
-  transactions = transactions.filter(t => t.id !== id);
-  save(); renderTxns(); updateBudgetSpend();
-}
-
-function renderTxns() {
-  const income = transactions.filter(t=>t.type==='income').reduce((s,t)=>s+t.amt,0);
-  const expense = transactions.filter(t=>t.type==='expense').reduce((s,t)=>s+t.amt,0);
-  const bal = income - expense;
-  document.getElementById('totIncome').textContent = '₨' + income.toLocaleString();
-  document.getElementById('totExpense').textContent = '₨' + expense.toLocaleString();
-  const balEl = document.getElementById('totBalance');
-  balEl.textContent = '₨' + Math.abs(bal).toLocaleString();
-  balEl.className = 'sum-value ' + (bal >= 0 ? 'up' : 'down');
-  if (!transactions.length) { document.getElementById('txnList').innerHTML = '<div class="empty">Koi transaction nahi — upar add karo!</div>'; return; }
-  document.getElementById('txnList').innerHTML = transactions.map(t => `
-    <div class="txn-item">
-      <div><div class="txn-desc">${t.desc}</div><div class="txn-cat">${t.cat} • ${t.date}</div></div>
-      <div style="display:flex;align-items:center;gap:8px">
-        <span class="txn-amt ${t.type==='income'?'up':'down'}">${t.type==='income'?'+':'-'}₨${t.amt.toLocaleString()}</span>
-        <button class="del-btn" onclick="deleteTxn(${t.id})">✕</button>
-      </div>
-    </div>`).join('');
-}
-
-// ===== BUDGET =====
-function setBudget() {
-  const v = parseFloat(document.getElementById('budgetIncome').value);
-  if (!v) return;
-  monthlyIncome = v;
-  save(); renderBudget();
-}
-
-function addBudgetCat() {
-  const name = document.getElementById('budCatName').value.trim();
-  const amt = parseFloat(document.getElementById('budCatAmt').value);
-  if (!name || !amt) return;
-  budgets.push({id:Date.now(), name, amt});
-  save(); renderBudget();
-  document.getElementById('budCatName').value='';
-  document.getElementById('budCatAmt').value='';
-}
-
-function updateBudgetSpend() { renderBudget(); }
-
-function renderBudget() {
-  const container = document.getElementById('budgetCards');
-  if (!budgets.length) { container.innerHTML=''; return; }
-  container.innerHTML = budgets.map(b => {
-    const spent = transactions.filter(t=>t.type==='expense'&&t.cat===b.name).reduce((s,t)=>s+t.amt,0);
-    const pct = Math.min(100, Math.round((spent/b.amt)*100));
-    const color = pct>90?'#ff4444':pct>70?'#ff9800':'#00c853';
-    return `<div class="card">
-      <div style="display:flex;justify-content:space-between;margin-bottom:4px">
-        <span style="font-size:12px">${b.name}</span>
-        <span style="font-size:11px;color:${color}">₨${spent.toLocaleString()} / ₨${b.amt.toLocaleString()}</span>
-      </div>
-      <div class="budget-bar-bg"><div class="budget-bar" style="width:${pct}%;background:${color}"></div></div>
-      <div style="font-size:9px;color:#4a7a5a;margin-top:4px">${pct}% used</div>
-    </div>`;
-  }).join('');
-}
-
-// ===== AI ADVISOR =====
-function setQ(q) { document.getElementById('aiQ').value = q; }
-
-async function askAI() {
-  const q = document.getElementById('aiQ').value.trim();
-  if (!q) return;
-  const btn = document.getElementById('aiBtn');
-  btn.disabled = true; btn.textContent = '⏳ Soch raha hoon...';
-  document.getElementById('aiAnswer').innerHTML = '';
-
-  try {
-    const priceCtx = coins.slice(0,5).map(c =>
-      `${c.name}: $${c.current_price}, 24h: ${c.price_change_percentage_24h?.toFixed(2)}%`
-    ).join('\n');
-    const finCtx = (() => {
-      const income = transactions.filter(t=>t.type==='income').reduce((s,t)=>s+t.amt,0);
-      const expense = transactions.filter(t=>t.type==='expense').reduce((s,t)=>s+t.amt,0);
-      return `User income: ₨${income}, expenses: ₨${expense}, balance: ₨${income-expense}`;
-    })();
-
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:1000,
-        system:`Aap JamshadBhatti Finance World Hub ke AI Finance Advisor hain. Aap Roman Urdu mein jawab dete hain — friendly, concise aur helpful. Live crypto prices:\n${priceCtx}\n\nUser ki financial situation:\n${finCtx}\n\nHamesha practical Pakistani perspective se advice do.`,
-        messages:[{role:'user',content:q}]
-      })
-    });
-    const data = await res.json();
-    const ans = data.content?.[0]?.text || 'Koi jawab nahi mila.';
-    document.getElementById('aiAnswer').innerHTML = `<div class="ai-answer">${ans}</div>`;
-  } catch(e) {
-    document.getElementById('aiAnswer').innerHTML = '<div class="ai-answer" style="border-color:#ff4444">Error: Network problem. Dobara koshish karo.</div>';
-  }
-  btn.disabled=false; btn.textContent='🤖 POOCHHO →';
-}
-
-// ===== INIT =====
-fetchCoins();
-fetchRates();
-setInterval(fetchCoins, 30000);
-setInterval(fetchRates, 60000);
-renderTxns();
-renderBudget();
-
-// Service Worker
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('/service-worker.js').catch(()=>{});
-}
-</script>
-</body>
-</html>
-    .
+  {id:'shiba-inu
