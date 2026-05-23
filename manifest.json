@@ -1,0 +1,27 @@
+{
+  "name": "JamshadBhatti Finance World Hub",
+  "short_name": "Finance Hub",
+  "description": "JamshadBhatti Finance World Hub - Aapka Personal Finance Manager",
+  "start_url": "/JamshadBhatti-Finance-App.html",
+  "display": "standalone",
+  "background_color": "#0a2e1a",
+  "theme_color": "#00c853",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "productivity"],
+  "lang": "ur",
+  "dir": "ltr"
+}
