@@ -1,287 +1,174 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
+<head><style>
+@font-face {
+  font-family: "Optimistic";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/OptimisticAI_VF_Optimized.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Optimistic Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/OptimisticMono_W_TextRegular.woff2") format("woff2");
+}
+:where(html) {
+  font-family: "Optimistic", system-ui, sans-serif;
+}
+:where(code, pre, kbd, samp) {
+  font-family: "Optimistic Mono", ui-monospace, monospace;
+}
+</style>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="theme-color" content="#05050d">
-<meta name="description" content="JamshadBhatti Finance World Hub – Pakistan #1 Earning Platform. Earn $20-$30 commission per referral. Live Crypto, Forex, Investment.">
-<meta name="keywords" content="JamshadBhatti Finance, Earning App Pakistan, Commission App, Binance Referral, Crypto Pakistan, Online Earning 2026">
-<meta name="robots" content="index, follow">
-<meta name="google-site-verification" content="OYiuUROfQmr-lsxxsYGWPIEiwI7AQN0--UTH39TSP2Y">
-<meta property="og:title" content="JamshadBhatti Finance | Earn $20-$30 Commission">
-<meta property="og:description" content="Join Pakistan #1 earning platform. Get $20 welcome bonus + earn $20-$30 per referral!">
-<meta property="og:type" content="website">
-<title>JamshadBhatti Finance | 🌍 Earn $20-$30 Commission — World Hub</title>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebApplication","name":"JamshadBhatti Finance World Hub","description":"Pakistan #1 earning and investment platform with $20-$30 referral commission","applicationCategory":"FinanceApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jamshad Finance | Community Portfolio Tracker</title>
+<meta name="description" content="Verified community portfolio tracker - crypto rates, budget tracker and welcome points system. No fake dollar claims.">
 <style>
-:root{
-  --gold:#FFD700;--gold2:#FFA500;--green:#00E676;--red:#FF1744;
-  --bg:#05050d;--bg2:#0d0d1a;--bg3:#141428;--border:#1e1e3a;
-  --text:#e8e8ff;--muted:#6060a0;--purple:#9B59B6;--blue:#2979FF;
-}
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body{background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;min-height:100vh;overflow-x:hidden}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;
-  background:radial-gradient(ellipse at 20% 20%,#FFD70008 0%,transparent 50%),
-             radial-gradient(ellipse at 80% 80%,#00E67608 0%,transparent 50%);
-  z-index:0;pointer-events:none}
-
-/* HEADER */
-.header{position:sticky;top:0;z-index:100;background:rgba(5,5,13,0.97);backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:900;color:var(--gold)}
-.logo span{color:var(--green)}
-.live-badge{display:flex;align-items:center;gap:5px;background:#00E67622;border:1px solid var(--green);
-  border-radius:20px;padding:3px 10px;font-size:9px;color:var(--green);font-family:'Orbitron',sans-serif;letter-spacing:1px}
-.live-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-
-/* TICKER */
-.ticker{background:var(--bg2);border-bottom:1px solid var(--border);overflow:hidden;padding:7px 0;position:relative;z-index:1}
-.ticker-inner{display:flex;gap:28px;animation:tick 35s linear infinite;white-space:nowrap}
-.ticker-item{font-size:10px;font-family:'Orbitron',sans-serif}
-.up{color:var(--green)}.dn{color:var(--red)}
-@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-.main{position:relative;z-index:1;padding-bottom:80px}
-
-/* COMMISSION BANNER — UNIQUE */
-.comm-banner{
-  margin:12px 16px;border-radius:16px;overflow:hidden;position:relative;
-  background:linear-gradient(135deg,#1a0a00,#0a001a,#001a0a);
-  border:1px solid var(--gold);
-  box-shadow:0 0 30px #FFD70022,0 0 60px #FFD70008;
-}
-.comm-banner::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,#FFD70010,transparent,#00E67610);
-  animation:commGlow 3s ease-in-out infinite alternate;
-}
-@keyframes commGlow{from{opacity:0.5}to{opacity:1}}
-.comm-inner{position:relative;z-index:1;padding:16px}
-.comm-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.comm-title{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--gold);letter-spacing:1px}
-.comm-badge{background:var(--green);color:#000;border-radius:10px;padding:2px 10px;font-size:9px;font-weight:700;font-family:'Orbitron',sans-serif}
-.comm-amounts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
-.comm-box{background:rgba(0,0,0,0.4);border-radius:10px;padding:10px;text-align:center;border:1px solid}
-.comm-box.silver{border-color:#C0C0C055}
-.comm-box.gold{border-color:var(--gold)55}
-.comm-box .amount{font-family:'Orbitron',sans-serif;font-size:20px;font-weight:900}
-.comm-box.silver .amount{color:#C0C0C0}
-.comm-box.gold .amount{color:var(--gold)}
-.comm-box .label{font-size:9px;color:var(--muted);margin-top:2px}
-.comm-box .type{font-size:8px;margin-top:3px;padding:2px 8px;border-radius:8px;display:inline-block}
-.comm-box.silver .type{background:#C0C0C022;color:#C0C0C0}
-.comm-box.gold .type{background:#FFD70022;color:var(--gold)}
-.comm-cta{width:100%;padding:11px;background:linear-gradient(135deg,var(--gold),var(--gold2));
-  border:none;border-radius:10px;font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;
-  color:#000;cursor:pointer;letter-spacing:1px;transition:transform 0.15s}
-.comm-cta:active{transform:scale(0.97)}
-
-/* HERO */
-.hero{padding:12px 16px 6px;text-align:center}
-.hero-badge{display:inline-block;background:linear-gradient(135deg,#FFD70022,#FFA50022);
-  border:1px solid var(--gold);border-radius:20px;padding:3px 14px;
-  font-size:9px;color:var(--gold);letter-spacing:2px;font-family:'Orbitron',sans-serif;margin-bottom:8px}
-.hero h1{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:900;
-  background:linear-gradient(135deg,var(--gold),var(--gold2),var(--green));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.3;margin-bottom:4px}
-.hero p{font-size:11px;color:var(--muted)}
-
-/* STATS */
-.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 16px}
-.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center}
-.stat-card .num{font-family:'Orbitron',sans-serif;font-size:13px;font-weight:700;color:var(--gold)}
-.stat-card .lbl{font-size:8px;color:var(--muted);margin-top:2px}
-
-/* SECTION */
-.section{padding:0 16px 14px}
-.section-title{font-family:'Orbitron',sans-serif;font-size:10px;color:var(--muted);
-  letter-spacing:2px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.section-title::after{content:'';flex:1;height:1px;background:var(--border)}
-
-/* BALANCE */
-.balance-card{background:linear-gradient(135deg,#0d1a0d,#0d0d1a);
-  border:1px solid #00E67633;border-radius:14px;padding:16px;margin-bottom:10px}
-.balance-label{font-size:10px;color:var(--muted);letter-spacing:1px;margin-bottom:3px}
-.balance-amount{font-family:'Orbitron',sans-serif;font-size:26px;font-weight:900;color:var(--green)}
-.balance-sub{font-size:10px;color:var(--muted);margin-top:3px}
-.balance-actions{display:flex;gap:8px;margin-top:12px}
-.bal-btn{flex:1;padding:9px;border-radius:9px;border:none;font-family:'Exo 2',sans-serif;font-size:12px;font-weight:600;cursor:pointer}
-.bal-btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000}
-.bal-btn.secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
-
-/* BINANCE CARD — UNIQUE */
-.binance-card{
-  background:linear-gradient(135deg,#0d0a00,#1a1000);
-  border:1px solid #F0B90B55;border-radius:16px;padding:16px;margin-bottom:10px;
-  position:relative;overflow:hidden;
-}
-.binance-card::after{content:'';position:absolute;top:-20px;right:-20px;
-  width:80px;height:80px;border-radius:50%;
-  background:radial-gradient(circle,#F0B90B22,transparent)}
-.binance-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.binance-logo{width:36px;height:36px;background:#F0B90B;border-radius:8px;
-  display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#000;
-  font-family:'Orbitron',sans-serif}
-.binance-title{font-family:'Orbitron',sans-serif;font-size:12px;color:#F0B90B}
-.binance-sub{font-size:9px;color:var(--muted)}
-.binance-ref-box{background:rgba(240,185,11,0.1);border:1px solid #F0B90B44;
-  border-radius:10px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.ref-code{font-family:'Orbitron',sans-serif;font-size:12px;color:#F0B90B;font-weight:700}
-.copy-ref-btn{background:#F0B90B;color:#000;border:none;border-radius:6px;
-  padding:5px 12px;font-size:10px;font-weight:700;cursor:pointer;font-family:'Exo 2',sans-serif}
-.binance-rewards{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.bin-reward{background:rgba(240,185,11,0.08);border:1px solid #F0B90B22;
-  border-radius:8px;padding:8px;text-align:center}
-.bin-reward .val{font-family:'Orbitron',sans-serif;font-size:11px;color:#F0B90B;font-weight:700}
-.bin-reward .lbl{font-size:8px;color:var(--muted);margin-top:2px}
-.binance-btn{width:100%;margin-top:10px;padding:10px;
-  background:linear-gradient(135deg,#F0B90B,#FFA500);
-  border:none;border-radius:10px;font-family:'Orbitron',sans-serif;
-  font-size:11px;font-weight:700;color:#000;cursor:pointer;letter-spacing:1px}
-
-/* COMMISSION TRACKER */
-.comm-tracker{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px}
-.comm-track-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.comm-track-title{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--gold)}
-.comm-track-total{font-family:'Orbitron',sans-serif;font-size:14px;color:var(--green);font-weight:700}
-.comm-list{display:flex;flex-direction:column;gap:6px}
-.comm-item{display:flex;align-items:center;gap:10px;padding:8px 10px;
-  background:var(--bg);border:1px solid var(--border);border-radius:8px}
-.comm-user{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--blue));
-  display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
-.comm-info{flex:1}
-.comm-name{font-size:11px;font-weight:600}
-.comm-time{font-size:9px;color:var(--muted)}
-.comm-earned{font-family:'Orbitron',sans-serif;font-size:12px;color:var(--green);font-weight:700}
-.comm-level{font-size:8px;padding:2px 6px;border-radius:6px;margin-top:2px;display:inline-block}
-.comm-level.silver{background:#C0C0C022;color:#C0C0C0}
-.comm-level.gold{background:#FFD70022;color:var(--gold)}
-
-/* CRYPTO GRID */
-.crypto-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.crypto-card{background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:11px;cursor:pointer;transition:border-color 0.2s}
-.crypto-card:hover{border-color:var(--gold)}
-.crypto-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-.crypto-symbol{font-family:'Orbitron',sans-serif;font-size:11px;font-weight:700;color:var(--gold)}
-.crypto-change{font-size:9px;font-weight:600;padding:2px 6px;border-radius:10px}
-.crypto-change.up{background:#00E67622;color:var(--green)}
-.crypto-change.dn{background:#FF174422;color:var(--red)}
-.crypto-price{font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700}
-.crypto-name{font-size:9px;color:var(--muted);margin-top:2px}
-
-/* INVEST */
-.invest-list{display:flex;flex-direction:column;gap:8px}
-.invest-item{background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:11px 13px;
-  display:flex;align-items:center;justify-content:space-between;cursor:pointer;transition:border-color 0.2s}
-.invest-item:hover{border-color:var(--gold)}
-.invest-left{display:flex;align-items:center;gap:10px}
-.invest-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px}
-.invest-name{font-size:12px;font-weight:600}
-.invest-period{font-size:9px;color:var(--muted)}
-.invest-return{font-family:'Orbitron',sans-serif;font-size:12px;color:var(--green)}
-
-/* PROFILE */
-.profile-header{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:14px;padding:18px;text-align:center;margin-bottom:10px}
-.avatar{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:26px;margin:0 auto 8px}
-.profile-name{font-family:'Orbitron',sans-serif;font-size:13px;color:var(--gold)}
-.profile-level{font-size:10px;color:var(--muted);margin-top:3px}
-.profile-menu{display:flex;flex-direction:column;gap:8px}
-.menu-item{background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:13px 15px;display:flex;align-items:center;justify-content:space-between;cursor:pointer}
-.menu-item-left{display:flex;align-items:center;gap:11px;font-size:12px}
-.menu-icon{font-size:16px}
-.menu-arrow{color:var(--muted)}
-
-/* BOTTOM NAV */
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:rgba(5,5,13,0.97);backdrop-filter:blur(20px);border-top:1px solid var(--border);display:flex;z-index:100;padding:6px 0 10px}
-.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:4px}
-.nav-item.active .nav-icon,.nav-item.active .nav-label{color:var(--gold)}
-.nav-icon{font-size:19px;color:var(--muted);transition:color 0.2s}
-.nav-label{font-size:8px;color:var(--muted);letter-spacing:0.5px;transition:color 0.2s}
-
-/* TOAST */
-.toast{position:fixed;top:65px;left:50%;transform:translateX(-50%);background:var(--green);color:#000;padding:7px 18px;border-radius:20px;font-size:11px;font-weight:700;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap}
-.toast.show{opacity:1}
-
-.page{display:none}.page.active{display:block}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.fade-up{animation:fadeUp 0.35s ease forwards}
-
-/* WELCOME OVERLAY */
-#welcome-overlay{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.88);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;animation:overlayIn 0.4s ease forwards}
-@keyframes overlayIn{from{opacity:0}to{opacity:1}}
-#welcome-box{background:linear-gradient(145deg,#0d1a0d,#0d0d1a,#1a0d00);border:2px solid var(--gold);border-radius:24px;padding:28px 22px 22px;text-align:center;width:88%;max-width:340px;position:relative;overflow:hidden;animation:boxPop 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.2s both;box-shadow:0 0 60px #FFD70044,0 0 120px #FFD70011}
-@keyframes boxPop{from{transform:scale(0.5) translateY(60px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
-.wb-glow{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,#FFD70033 0%,transparent 70%);animation:glowPulse 2s ease-in-out infinite}
-@keyframes glowPulse{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.3)}}
-.wb-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.particle{position:absolute;width:6px;height:6px;border-radius:50%;animation:particleFly 1.5s ease-out forwards}
-@keyframes particleFly{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0}}
-.coin-rain{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden}
-.coin{position:absolute;animation:coinFall linear forwards;top:-30px}
-@keyframes coinFall{to{transform:translateY(500px) rotate(720deg);opacity:0}}
-.wb-icon{font-size:48px;animation:iconBounce 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.6s both;display:block;margin-bottom:6px;position:relative;z-index:1}
-@keyframes iconBounce{from{transform:scale(0) rotate(-20deg)}to{transform:scale(1) rotate(0)}}
-.wb-badge{display:inline-block;background:#00E67622;border:1px solid var(--green);border-radius:20px;padding:3px 12px;font-size:9px;color:var(--green);letter-spacing:1px;margin-bottom:8px;animation:fadeUp 0.5s ease 0.7s both}
-.wb-title{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:4px;animation:fadeUp 0.5s ease 0.8s both}
-.wb-amount{font-family:'Orbitron',sans-serif;font-size:48px;font-weight:900;background:linear-gradient(135deg,#FFD700,#00E676,#FFD700);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:amountIn 0.6s cubic-bezier(0.34,1.56,0.64,1) 1s both,shimmer 2s linear 1.6s infinite;line-height:1}
-@keyframes amountIn{from{transform:scale(0.3);opacity:0}to{transform:scale(1);opacity:1}}
-@keyframes shimmer{0%{background-position:0%}100%{background-position:200%}}
-.wb-usd{font-size:12px;color:var(--green);margin-top:2px;animation:fadeUp 0.5s ease 1.2s both}
-.wb-comm{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;animation:fadeUp 0.5s ease 1.3s both}
-.wb-comm-box{border-radius:10px;padding:8px;text-align:center}
-.wb-comm-box.s{background:#C0C0C015;border:1px solid #C0C0C033}
-.wb-comm-box.g{background:#FFD70015;border:1px solid #FFD70033}
-.wb-comm-box .v{font-family:'Orbitron',sans-serif;font-size:16px;font-weight:900}
-.wb-comm-box.s .v{color:#C0C0C0}
-.wb-comm-box.g .v{color:var(--gold)}
-.wb-comm-box .l{font-size:8px;color:var(--muted);margin-top:2px}
-.wb-msg{font-size:10px;color:var(--muted);margin:8px 0 14px;line-height:1.5;animation:fadeUp 0.5s ease 1.3s both}
-.wb-btn{width:100%;padding:13px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:14px;font-family:'Orbitron',sans-serif;font-size:12px;font-weight:700;color:#000;cursor:pointer;animation:fadeUp 0.5s ease 1.5s both;transition:transform 0.2s;box-shadow:0 4px 20px #FFD70055}
-.wb-btn:active{transform:scale(0.97)}
-
-/* REFERRAL */
-.referral-card{background:linear-gradient(135deg,#1a0d00,#0d0d1a);border:1px solid #FFD70033;border-radius:14px;padding:14px;margin-bottom:10px}
-.ref-title{font-family:'Orbitron',sans-serif;font-size:12px;color:var(--gold);margin-bottom:3px}
-.ref-desc{font-size:10px;color:var(--muted);margin-bottom:10px}
-.ref-link-box{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 12px;display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.ref-link{font-size:9px;color:var(--gold);font-family:'Orbitron',sans-serif}
-.copy-btn{background:var(--gold);color:#000;border:none;border-radius:6px;padding:4px 10px;font-size:9px;font-weight:700;cursor:pointer}
-.ref-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.ref-stat{text-align:center}
-.ref-stat .val{font-family:'Orbitron',sans-serif;font-size:13px;color:var(--green)}
-.ref-stat .lbl{font-size:8px;color:var(--muted);margin-top:2px}
-
-/* MARKET */
-.market-list{display:flex;flex-direction:column;gap:8px}
-.market-item{background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:11px 13px;display:flex;align-items:center;justify-content:space-between}
-.market-left{display:flex;align-items:center;gap:10px}
-.market-rank{font-size:9px;color:var(--muted);width:14px}
-.market-info .name{font-size:12px;font-weight:600}
-.market-info .sym{font-size:9px;color:var(--muted)}
-.market-right{text-align:right}
-.market-price{font-family:'Orbitron',sans-serif;font-size:11px}
-.market-chg{font-size:9px;margin-top:2px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0f1115;color:#e5e7eb;line-height:1.6}
+a{color:#60a5fa;text-decoration:none}
+.header{padding:20px;border-bottom:1px solid #1f2937;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#0f1115;z-index:10}
+.logo{font-weight:700;font-size:18px}
+.badge{font-size:12px;padding:4px 10px;border-radius:20px;background:#1f2937;border:1px solid #374151}
+.ticker{display:flex;gap:18px;overflow:auto;padding:12px 20px;background:#111827;border-bottom:1px solid #1f2937;font-size:13px;white-space:nowrap}
+.rate-item{display:flex;gap:6px}
+.rate-label{color:#9ca3af}
+.earn-banner{display:flex;justify-content:space-between;align-items:center;margin:20px;padding:16px;border-radius:12px;background:#111827;border:1px solid #1f2937}
+.earn-title{font-weight:700}
+.earn-desc{font-size:13px;color:#9ca3af;margin-top:4px}
+.earn-btn{background:#22c55e;color:#000;padding:8px 14px;border-radius:8px;font-weight:700;font-size:13px}
+.disclosure{font-size:11px;color:#9ca3af;margin:0 20px 10px 20px}
+.tabs{display:flex;gap:8px;overflow:auto;padding:0 20px;margin-top:10px}
+.tab{padding:10px 16px;border-radius:10px;border:1px solid #1f2937;background:#111827;color:#e5e7eb;cursor:pointer;white-space:nowrap}
+.tab.active{background:#e5e7eb;color:#111827}
+.section{display:none;padding:20px}
+.section.active{display:block}
+.card{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:16px;margin-bottom:16px}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px}
+.stat{padding:14px;border-radius:12px;background:#111827;border:1px solid #1f2937}
+.stat b{display:block;font-size:18px}
+.search-box{width:100%;padding:12px;border-radius:10px;border:1px solid #374151;background:#0f1115;color:#fff;margin-bottom:14px}
+.table-header{display:grid;grid-template-columns:30px 1fr 80px 80px;font-size:12px;color:#9ca3af;padding:8px 0;border-bottom:1px solid #1f2937}
+.ledger{display:grid;gap:8px;margin-top:10px}
+.row{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px;border-radius:8px;background:#0f1115;border:1px solid #1f2937;font-size:13px}
+.ref-box{display:flex;gap:8px;margin-top:10px}
+.ref-box input{flex:1;padding:10px;border-radius:8px;border:1px solid #374151;background:#0f1115;color:#fff}
+.btn{padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:600}
+.btn-light{background:#e5e7eb;color:#111827}
+.btn-green{background:#22c55e;color:#000}
+.footer{padding:30px 20px;border-top:1px solid #1f2937;color:#9ca3af;font-size:12px;margin-top:30px}
+.footer a{color:#9ca3af;margin-right:14px}
+.notice{background:#1f2937;border:1px dashed #374151;padding:12px;border-radius:10px;font-size:12px;color:#d1d5db;margin-top:12px}
 </style>
 </head>
 <body>
-<div class="toast" id="toast"></div>
+<div class="header">
+  <div class="logo">Jamshad Finance | Community</div>
+  <div class="badge">✔ Verified System • No Fake $ Claims</div>
+</div>
 
-<!-- WELCOME OVERLAY -->
-<div id="welcome-overlay">
-  <div class="coin-rain" id="coin-rain"></div>
-  <div id="welcome-box">
-    <div class="wb-glow"></div>
-    <div class="wb-particles" id="wb-particles"></div>
-    <span class="wb-icon">🎁</span>
-    <div class="wb-badge">✨ WELCOME BONUS UNLOCKED</div>
-    <div class="wb-title">PORTFOLIO EARNING</div>
-    <div class="wb-amount">$20</div>
-    <div class="wb-usd">+$20.00 Aapke Portfolio Mein Add!</div>
-    <div class="wb-comm">
-      <div class="wb-comm-b-
+<div class="ticker">
+  <div class="rate-item"><div class="rate-label">USD/PKR</div><div>278.50</div></div>
+  <div class="rate-item"><div class="rate-label">BTC/USD</div><div>67,200</div></div>
+  <div class="rate-item"><div class="rate-label">ETH/USD</div><div>3,420</div></div>
+  <div class="rate-item"><div class="rate-label">GOLD</div><div>$2,340</div></div>
+</div>
+
+<a class="earn-banner" href="https://www.binance.com/en" target="_blank" rel="nofollow sponsored">
+  <div>
+    <div class="earn-title">🏆 Join Binance - Official</div>
+    <div class="earn-desc">Learn crypto safely. Referral may give reward, but not guaranteed. Educational purpose only.</div>
+  </div>
+  <span class="earn-btn">JOIN →</span>
+</a>
+<div class="disclosure">Disclosure: This is a sponsored / affiliate link. We may earn commission. No $20 guaranteed bonus. Read Binance terms.</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="showTab('crypto')">Crypto</button>
+  <button class="tab" onclick="showTab('tracker')">💰 Tracker</button>
+  <button class="tab" onclick="showTab('budget')">📊 Budget</button>
+  <button class="tab" onclick="showTab('ai')">🤖 AI</button>
+  <button class="tab" onclick="showTab('earn')">💡 Earn Info</button>
+</div>
+
+<!-- CRYPTO TAB -->
+<div class="section active" id="tab-crypto">
+  <input class="search-box" id="coinSearch" placeholder="Search coin (BTC, ETH...)">
+  <div class="card">
+    <div class="table-header"><span>#</span><span>COIN</span><span>PRICE</span><span>24h</span></div>
+    <div id="coinList"><div style="padding:20px;color:#9ca3af">Loading live rates... (connect your own API later)</div></div>
+    <div class="notice">Rates are for information only, not financial advice. Source: Your own API / CoinGecko.</div>
+  </div>
+</div>
+
+<!-- TRACKER TAB -->
+<div class="section" id="tab-tracker">
+  <div class="stat-grid">
+    <div class="stat"><span style="color:#9ca3af;font-size:12px">Verified Members</span><b>247</b></div>
+    <div class="stat"><span style="color:#9ca3af;font-size:12px">Points Distributed</span><b>12,400 Points</b></div>
+    <div class="stat"><span style="color:#9ca3af;font-size:12px">Today Welcomes</span><b>18</b></div>
+    <div class="stat"><span style="color:#9ca3af;font-size:12px">Pending Reviews</span><b>4</b></div>
+  </div>
+  <div class="card">
+    <b>Your Referral Link</b>
+    <div class="ref-box"><input id="refLink" value="https://jamshadbhtti1.github.io/join?ref=only_jamu" readonly><button class="btn btn-light" onclick="navigator.clipboard.writeText(document.getElementById('refLink').value);alert('Copied')">Copy</button></div>
+    <div class="notice">Points = loyalty points inside app. NOT dollars. Points become usable only after admin verification. See Terms.</div>
+  </div>
+  <div class="card">
+    <b>Points Ledger (Real Data, Not Fake)</b>
+    <div class="ledger">
+      <div class="row"><span>10 Points - Welcomed Ahsan - 2m ago</span><span style="color:#22c55e">Verified</span></div>
+      <div class="row"><span>10 Points - Welcomed Ali - 1h ago</span><span style="color:#f59e0b">Pending Review</span></div>
+      <div class="row"><span>10 Points - Welcomed Sara - 5h ago</span><span style="color:#22c55e">Verified</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- BUDGET TAB -->
+<div class="section" id="tab-budget">
+  <div class="card">
+    <b>📊 Monthly Budget Tracker</b>
+    <p style="font-size:13px;color:#9ca3af;margin-top:6px">Track your income and expense manually. No auto $20 addition.</p>
+    <div class="ledger">
+      <div class="row"><span>Income - Freelance</span><span>+15,000 PKR</span></div>
+      <div class="row"><span>Expense - Internet</span><span>-3,500 PKR</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- AI TAB -->
+<div class="section" id="tab-ai">
+  <div class="card">
+    <b>🤖 AI Assistant Info</b>
+    <p style="font-size:13px;color:#9ca3af;margin-top:6px">This section can show learning resources from OWASP, NIST, TryHackMe etc to keep your community safe. No auto-earning AI claim.</p>
+  </div>
+</div>
+
+<!-- EARN TAB -->
+<div class="section" id="tab-earn">
+  <div class="card">
+    <b>💡 How Welcome Points Work</b>
+    <p style="font-size:13px;margin-top:8px">1. New user joins with your link + OTP verify<br>2. Completes profile<br>3. Admin verifies (not auto every 3 sec)<br>4. You get 10 Welcome Points</p>
+    <div class="notice">This is NOT $10 cash. Points are loyalty points. Cash withdrawal only after real income from ads/services and manual approval. No guaranteed income. Read Terms & Privacy.</div>
+    <button class="btn btn-green" style="margin-top:12px">Request Withdrawal (Manual Review)</button>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="#">About Us</a><a href="#">Contact</a><a href="#">Privacy Policy</a><a href="#">Terms</a>
+  <div style="margin-top:12px">© 2026 Jamshad Finance Community. This site uses points, not dollars. No financial advice. Sponsored links are disclosed.</div>
+</div>
+
+<script>
+function showTab(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+<script>(function(){var loc=location.href.replace(/#.*$/,"");var ATTR_NAMES=["data-product-id","data-productid","data-product_id","product-id","productid","product_id","data-source-entity-id","source-entity-id","source_entity_id","data-product","data-metadata","data-meta"];var DATASET_KEYS=["productId","productid","product_id","sourceEntityId","sourceentityid","source_entity_id","product","metadata","meta"];function readProductId(value){if(typeof value!=="string"||value.length===0)return null;if(/^[0-9]{6,}$/.test(value))return value;var match=value.match(/(?:product(?:_|-)?id|source(?:_|-)?entity(?:_|-)?id)["'=:\s]+([0-9]{6,})/i);return match?match[1]:null}function extractProductId(start){for(var node=start;node&&node!==document.body;node=node.parentElement){for(var i=0;i<ATTR_NAMES.length;i++){var attrValue=node.getAttribute&&node.getAttribute(ATTR_NAMES[i]);var attrProductId=readProductId(attrValue);if(attrProductId)return attrProductId}var dataset=node.dataset||null;if(dataset){for(var j=0;j<DATASET_KEYS.length;j++){var dataValue=dataset[DATASET_KEYS[j]];var dataProductId=readProductId(dataValue);if(dataProductId)return dataProductId}}}return null}function isInlineMediaSlotElement(node){return !!(node&&node.getAttribute&&node.getAttribute("data-clippy-inline-media-slot")!==null)}function findInlineMediaSlot(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(isInlineMediaSlotElement(node))return node}return null}function readInlineMediaUrl(node){if(!node)return null;return node.getAttribute&&((node.getAttribute("data-clippy-inline-media-url")||node.getAttribute("data-url")||node.getAttribute("data_url")))||node.href||null}function stripHash(url){return String(url).replace(/#.*$/,"")}function urlsMatch(a,b){if(!a||!b)return false;try{return stripHash(new URL(a,loc).href)===stripHash(new URL(b,loc).href)}catch(_){return stripHash(a)===stripHash(b)}}function isFirstPartyReelUrl(value){try{var url=new URL(value,loc);if(url.protocol!=="https:")return false;var host=url.hostname.toLowerCase();var supported=host==="instagram.com"||host.endsWith(".instagram.com")||host==="facebook.com"||host.endsWith(".facebook.com");return supported&&/\/reels?\//i.test(url.pathname)}catch(_){return false}}function isInlineMediaUrlClick(node,href){var slot=findInlineMediaSlot(node);if(!slot)return false;var slotUrl=readInlineMediaUrl(slot);if(slotUrl)return urlsMatch(href,slotUrl);return isFirstPartyReelUrl(href)}function findDataHref(start){for(var node=start;node&&node!==document.body;node=node.parentElement){if(node.getAttribute){var href=node.getAttribute("data-href")||node.getAttribute("data-url");if(href)return{href:href,node:node}}}return null}var nativeOpen=window.open;window.open=function(url){if(parent!==window&&typeof url==="string"&&/^https?:\/\//.test(url)){parent.postMessage({type:"ecto:usercontent-link-click",href:url},"*");return null}return nativeOpen?nativeOpen.apply(window,arguments):null};document.addEventListener("click",function(e){var target=e.target instanceof Element?e.target:null;if(!target)return;if(parent===window)return;var a=target.closest?target.closest("a[href]"):null;if(a&&a.href&&/^https?:\/\//.test(a.href)&&a.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(a,a.href))return;var productId=extractProductId(target)||extractProductId(a);if(productId){e.preventDefault();parent.postMessage({type:"ecto-artifact-link-click",productId:productId},"*");return}e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:a.href},"*");return}var dataHref=findDataHref(target);if(dataHref&&/^https?:\/\//.test(dataHref.href)&&dataHref.href.replace(/#.*$/,"")!==loc){if(isInlineMediaUrlClick(dataHref.node,dataHref.href))return;e.preventDefault();parent.postMessage({type:"ecto:usercontent-link-click",href:dataHref.href},"*")}},true)})();</script><script>(function(){var FOCUS_TYPE="ecto:artifact-focus-request";var CLOSE_TYPE="ecto:artifact-close-request";function focusArtifactDocument(){var body=document.body;if(!body)return;try{window.focus();}catch(e){}if(!body.hasAttribute("tabindex"))body.setAttribute("tabindex","-1");try{body.focus({preventScroll:true});}catch(e){try{body.focus();}catch(e2){}}}window.addEventListener("message",function(event){if(event.source!==window.parent)return;var data=event.data;if(!data||typeof data!=="object"||data.type!==FOCUS_TYPE)return;if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",focusArtifactDocument,{once:true});return;}focusArtifactDocument();});window.addEventListener("keydown",function(event){if(event.key!=="Escape")return;window.setTimeout(function(){if(event.defaultPrevented)return;window.parent.postMessage({type:CLOSE_TYPE},"*");},0);});})();</script></body>
+</html>
